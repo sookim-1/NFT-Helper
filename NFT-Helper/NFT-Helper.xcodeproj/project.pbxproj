@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		76289E9627CA3750009B70DD /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76289E9527CA3750009B70DD /* SecondVC.swift */; };
+		76289E9827CA3A59009B70DD /* CustomDefaultStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76289E9727CA3A59009B70DD /* CustomDefaultStyleButton.swift */; };
+		76289E9A27CA3B5F009B70DD /* CustomDefaultStyleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76289E9927CA3B5F009B70DD /* CustomDefaultStyleTextField.swift */; };
 		76EA7BCA27C0CCA9004A56C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */; };
 		76EA7BCC27C0CCA9004A56C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BCB27C0CCA9004A56C1 /* SceneDelegate.swift */; };
 		76EA7BCE27C0CCA9004A56C1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BCD27C0CCA9004A56C1 /* MainVC.swift */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		76289E9527CA3750009B70DD /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		76289E9727CA3A59009B70DD /* CustomDefaultStyleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDefaultStyleButton.swift; sourceTree = "<group>"; };
+		76289E9927CA3B5F009B70DD /* CustomDefaultStyleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDefaultStyleTextField.swift; sourceTree = "<group>"; };
 		76EA7BC627C0CCA9004A56C1 /* NFT-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NFT-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76EA7BCB27C0CCA9004A56C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 				76EA7BCB27C0CCA9004A56C1 /* SceneDelegate.swift */,
 				76EA7BCD27C0CCA9004A56C1 /* MainVC.swift */,
 				76289E9527CA3750009B70DD /* SecondVC.swift */,
+				76289E9727CA3A59009B70DD /* CustomDefaultStyleButton.swift */,
+				76289E9927CA3B5F009B70DD /* CustomDefaultStyleTextField.swift */,
 				76EA7BD227C0CCAC004A56C1 /* Assets.xcassets */,
 				76EA7BD427C0CCAC004A56C1 /* LaunchScreen.storyboard */,
 				76EA7BD727C0CCAC004A56C1 /* Info.plist */,
@@ -257,7 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76289E9827CA3A59009B70DD /* CustomDefaultStyleButton.swift in Sources */,
 				76289E9627CA3750009B70DD /* SecondVC.swift in Sources */,
+				76289E9A27CA3B5F009B70DD /* CustomDefaultStyleTextField.swift in Sources */,
 				76EA7BCE27C0CCA9004A56C1 /* MainVC.swift in Sources */,
 				76EA7BCA27C0CCA9004A56C1 /* AppDelegate.swift in Sources */,
 				76EA7BCC27C0CCA9004A56C1 /* SceneDelegate.swift in Sources */,

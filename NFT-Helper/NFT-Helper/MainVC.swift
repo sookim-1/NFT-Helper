@@ -15,6 +15,10 @@ final class MainVC: UIViewController {
     lazy var walletAddressTextField = CustomDefaultStyleTextField(placeholder: "메타마스크지갑 주소를 입력해주세요")
     lazy var callToActionButton = CustomDefaultStyleButton(backgroundColor: .systemGreen, title: "확인")
     
+    private var isWalletAddressText: Bool {
+        return !walletAddressTextField.text!.isEmpty
+    }
+    
     // MARK: 뷰컨트롤러 생명주기
     
     override func viewDidLoad() {
@@ -85,6 +89,13 @@ final class MainVC: UIViewController {
     }
     
     @objc func pushNFTListVC() {
+        guard isWalletAddressText
+        else {
+            self.centerToastMessage(text: "지갑주소를 입력해주세요!")
+            
+            return
+        }
+        
         let nftListVC = NFTListVC()
         nftListVC.walletAddress = walletAddressTextField.text
         navigationController?.pushViewController(nftListVC, animated: true)

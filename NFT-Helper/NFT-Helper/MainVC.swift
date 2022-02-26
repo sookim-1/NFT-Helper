@@ -52,6 +52,9 @@ final class MainVC: UIViewController {
     private func configureTextField() {
         view.addSubview(walletAddressTextField)
         
+        walletAddressTextField.delegate = self
+        walletAddressTextField.returnKeyType = .go
+        
         walletAddressTextField.snp.makeConstraints { make in
             make.top.equalTo(logoImageView.snp.bottom).offset(48)
             make.left.equalToSuperview().offset(50)
@@ -62,6 +65,8 @@ final class MainVC: UIViewController {
     
     private func configureCallToActionButton() {
         view.addSubview(callToActionButton)
+        
+        callToActionButton.addTarget(self, action: #selector(pushNFTListVC), for: .touchUpInside)
         
         callToActionButton.snp.makeConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-50)
@@ -78,5 +83,20 @@ final class MainVC: UIViewController {
         
         view.addGestureRecognizer(tapGesture)
     }
+    
+    @objc func pushNFTListVC() {
+        let nftListVC = NFTListVC()
+        nftListVC.walletAddress = walletAddressTextField.text
+        navigationController?.pushViewController(nftListVC, animated: true)
+    }
 }
 
+// MARK: UITextFieldDelegate
+
+extension MainVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        pushNFTListVC()
+        
+        return true
+    }
+}

@@ -19,6 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = createTabbarController()
         window?.backgroundColor = .systemBackground
         window?.makeKeyAndVisible()
+        
+        configureNavigationBar()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -73,6 +75,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabbarController.viewControllers = [createMainNC(), createSecondNC()]
         
         return tabbarController
+    }
+    
+    // MARK: - 네비게이션바 설정
+    private func configureNavigationBar() {
+        UINavigationBar.appearance().tintColor = .systemGreen
+        UINavigationBar.appearance().backgroundColor = .systemGray6
     }
 }
 

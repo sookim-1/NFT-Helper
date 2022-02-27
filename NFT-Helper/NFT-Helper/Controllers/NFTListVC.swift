@@ -11,8 +11,14 @@ import SnapKit
 
 final class NFTListVC: UIViewController {
 
+    enum Section {
+        case main
+    }
+    
     var walletAddress: String!
     private var collectionView: UICollectionView!
+    private var addressCollectionModels: [AddressCollectionModel] = []
+    private var dataSource: UICollectionViewDiffableDataSource<Section, AddressCollectionModel>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +27,7 @@ final class NFTListVC: UIViewController {
         configureNavigationBar()
         configureCollectionView()
         getAddressCollections()
+        configureDataSource()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,13 +63,35 @@ final class NFTListVC: UIViewController {
         return flowLayout
     }
     
+    // MARK: DiffableDataSource
+    
+    private func configureDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Section, AddressCollectionModel>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, asset) -> UICollectionViewCell? in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AssetsCollectionViewCell.reuseID, for: indexPath) as! AssetsCollectionViewCell
+            cell.set(asset: asset)
+            return cell
+        })
+    }
+    
+    
+    private func updateData() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, AddressCollectionModel>()
+        
+        snapshot.appendSections([.main])
+        snapshot.appendItems(addressCollectionModels)
+        DispatchQueue.main.async {
+            self.dataSource.apply(snapshot, animatingDifferences: true)
+        }
+    }
+    
     // MARK: 네트워킹
     
     private func getAddressCollections() {
         NetworkManager.shared.getCollections(url: Endpoint.collections(assetOwner: walletAddress, limit: 100).url) { result in
             switch result {
             case .success(let value):
-                print(value)
+                self.addressCollectionModels = value
+                self.updateData()
             case .failure(let error):
                 self.presentDefaultStyleAlertVC(title: "에러", body: error.rawValue, buttonTitle: "확인")
                 self.navigationController?.popViewController(animated: true)

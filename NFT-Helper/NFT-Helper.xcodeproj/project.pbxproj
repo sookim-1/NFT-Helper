@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		76289E9627CA3750009B70DD /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76289E9527CA3750009B70DD /* SecondVC.swift */; };
 		76289E9827CA3A59009B70DD /* CustomDefaultStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76289E9727CA3A59009B70DD /* CustomDefaultStyleButton.swift */; };
 		76289E9A27CA3B5F009B70DD /* CustomDefaultStyleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76289E9927CA3B5F009B70DD /* CustomDefaultStyleTextField.swift */; };
@@ -24,6 +25,11 @@
 		763DF40E27CB392A00D8F552 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF40D27CB392A00D8F552 /* NetworkError.swift */; };
 		763DF41127CB3C4A00D8F552 /* AssetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF41027CB3C4A00D8F552 /* AssetsCollectionViewCell.swift */; };
 		763DF41327CB3D5E00D8F552 /* CustomAssetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF41227CB3D5E00D8F552 /* CustomAssetImageView.swift */; };
+=======
+		762836E227C341910069DD9E /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762836E127C341910069DD9E /* TestVC.swift */; };
+		762836E627C401020069DD9E /* Test2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762836E527C401020069DD9E /* Test2VC.swift */; };
+		7681D3AD27C13766003A753A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7681D3AC27C13766003A753A /* Alamofire */; };
+>>>>>>> 551e964201d62e1fd393424ff727de0433aa9ee9
 		76EA7BCA27C0CCA9004A56C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */; };
 		76EA7BCC27C0CCA9004A56C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BCB27C0CCA9004A56C1 /* SceneDelegate.swift */; };
 		76EA7BCE27C0CCA9004A56C1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BCD27C0CCA9004A56C1 /* MainVC.swift */; };
@@ -32,6 +38,9 @@
 		76EA7BE127C0CCAC004A56C1 /* NFT_HelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BE027C0CCAC004A56C1 /* NFT_HelperTests.swift */; };
 		76EA7BEB27C0CCAC004A56C1 /* NFT_HelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BEA27C0CCAC004A56C1 /* NFT_HelperUITests.swift */; };
 		76EA7BED27C0CCAC004A56C1 /* NFT_HelperUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BEC27C0CCAC004A56C1 /* NFT_HelperUITestsLaunchTests.swift */; };
+		76EA7BFB27C0F518004A56C1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 76EA7BFA27C0F518004A56C1 /* SnapKit */; };
+		76EA7C0127C0F821004A56C1 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 76EA7C0027C0F821004A56C1 /* Starscream */; };
+		76EA7C0427C11634004A56C1 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 76EA7C0327C11634004A56C1 /* ProgressHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		76289E9527CA3750009B70DD /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		76289E9727CA3A59009B70DD /* CustomDefaultStyleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDefaultStyleButton.swift; sourceTree = "<group>"; };
 		76289E9927CA3B5F009B70DD /* CustomDefaultStyleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDefaultStyleTextField.swift; sourceTree = "<group>"; };
@@ -67,6 +77,10 @@
 		763DF40D27CB392A00D8F552 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		763DF41027CB3C4A00D8F552 /* AssetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsCollectionViewCell.swift; sourceTree = "<group>"; };
 		763DF41227CB3D5E00D8F552 /* CustomAssetImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAssetImageView.swift; sourceTree = "<group>"; };
+=======
+		762836E127C341910069DD9E /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		762836E527C401020069DD9E /* Test2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test2VC.swift; sourceTree = "<group>"; };
+>>>>>>> 551e964201d62e1fd393424ff727de0433aa9ee9
 		76EA7BC627C0CCA9004A56C1 /* NFT-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NFT-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76EA7BCB27C0CCA9004A56C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,8 +100,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				76289EA227CA454C009B70DD /* Toast in Frameworks */,
 				76289E9D27CA3CC7009B70DD /* SnapKit in Frameworks */,
+=======
+				76EA7BFB27C0F518004A56C1 /* SnapKit in Frameworks */,
+				7681D3AD27C13766003A753A /* Alamofire in Frameworks */,
+				76EA7C0427C11634004A56C1 /* ProgressHUD in Frameworks */,
+				76EA7C0127C0F821004A56C1 /* Starscream in Frameworks */,
+>>>>>>> 551e964201d62e1fd393424ff727de0433aa9ee9
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +129,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
 		763DF3FE27CB2B9900D8F552 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +204,13 @@
 				763DF41027CB3C4A00D8F552 /* AssetsCollectionViewCell.swift */,
 			);
 			path = CustomCells;
+=======
+		7681D3AB27C1375F003A753A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+>>>>>>> 551e964201d62e1fd393424ff727de0433aa9ee9
 			sourceTree = "<group>";
 		};
 		76EA7BBD27C0CCA9004A56C1 = {
@@ -191,6 +220,7 @@
 				76EA7BDF27C0CCAC004A56C1 /* NFT-HelperTests */,
 				76EA7BE927C0CCAC004A56C1 /* NFT-HelperUITests */,
 				76EA7BC727C0CCA9004A56C1 /* Products */,
+				7681D3AB27C1375F003A753A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -207,6 +237,7 @@
 		76EA7BC827C0CCA9004A56C1 /* NFT-Helper */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				763DF40227CB2FF100D8F552 /* Models */,
 				763DF40127CB2BD000D8F552 /* Controllers */,
 				763DF3FF27CB2BB000D8F552 /* Extensions */,
@@ -215,6 +246,15 @@
 				763DF40027CB2BBC00D8F552 /* Supports */,
 				763DF40527CB328900D8F552 /* NetworkService */,
 				763DF40C27CB391B00D8F552 /* Errors */,
+=======
+				76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */,
+				76EA7BCB27C0CCA9004A56C1 /* SceneDelegate.swift */,
+				76EA7BCD27C0CCA9004A56C1 /* ViewController.swift */,
+				762836E127C341910069DD9E /* TestVC.swift */,
+				762836E527C401020069DD9E /* Test2VC.swift */,
+				76EA7BD227C0CCAC004A56C1 /* Assets.xcassets */,
+				76EA7BD427C0CCAC004A56C1 /* LaunchScreen.storyboard */,
+>>>>>>> 551e964201d62e1fd393424ff727de0433aa9ee9
 				76EA7BD727C0CCAC004A56C1 /* Info.plist */,
 			);
 			path = "NFT-Helper";
@@ -254,8 +294,15 @@
 			);
 			name = "NFT-Helper";
 			packageProductDependencies = (
+<<<<<<< HEAD
 				76289E9C27CA3CC7009B70DD /* SnapKit */,
 				76289EA127CA454C009B70DD /* Toast */,
+=======
+				76EA7BFA27C0F518004A56C1 /* SnapKit */,
+				76EA7C0027C0F821004A56C1 /* Starscream */,
+				76EA7C0327C11634004A56C1 /* ProgressHUD */,
+				7681D3AC27C13766003A753A /* Alamofire */,
+>>>>>>> 551e964201d62e1fd393424ff727de0433aa9ee9
 			);
 			productName = "NFT-Helper";
 			productReference = 76EA7BC627C0CCA9004A56C1 /* NFT-Helper.app */;
@@ -330,8 +377,15 @@
 			);
 			mainGroup = 76EA7BBD27C0CCA9004A56C1;
 			packageReferences = (
+<<<<<<< HEAD
 				76289E9B27CA3CC7009B70DD /* XCRemoteSwiftPackageReference "SnapKit" */,
 				76289EA027CA454C009B70DD /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+=======
+				76EA7BF927C0F518004A56C1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				76EA7BFF27C0F821004A56C1 /* XCRemoteSwiftPackageReference "Starscream" */,
+				76EA7C0227C11634004A56C1 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
+				7681D3AA27C1357D003A753A /* XCRemoteSwiftPackageReference "Alamofire" */,
+>>>>>>> 551e964201d62e1fd393424ff727de0433aa9ee9
 			);
 			productRefGroup = 76EA7BC727C0CCA9004A56C1 /* Products */;
 			projectDirPath = "";
@@ -375,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				76289EAA27CA484E009B70DD /* CustomDefaultStyleAlertVC.swift in Sources */,
 				763DF40E27CB392A00D8F552 /* NetworkError.swift in Sources */,
 				76289E9827CA3A59009B70DD /* CustomDefaultStyleButton.swift in Sources */,
@@ -392,6 +447,12 @@
 				763DF41127CB3C4A00D8F552 /* AssetsCollectionViewCell.swift in Sources */,
 				763DF40B27CB351000D8F552 /* EndPoint.swift in Sources */,
 				76289EA427CA456C009B70DD /* UIViewController+Ext.swift in Sources */,
+=======
+				762836E227C341910069DD9E /* TestVC.swift in Sources */,
+				76EA7BCE27C0CCA9004A56C1 /* ViewController.swift in Sources */,
+				76EA7BCA27C0CCA9004A56C1 /* AppDelegate.swift in Sources */,
+				762836E627C401020069DD9E /* Test2VC.swift in Sources */,
+>>>>>>> 551e964201d62e1fd393424ff727de0433aa9ee9
 				76EA7BCC27C0CCA9004A56C1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,10 +623,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2MRY8P7863;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NFT-Helper/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "용가리계산기";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -591,10 +653,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2MRY8P7863;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NFT-Helper/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "용가리계산기";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -752,7 +815,19 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+<<<<<<< HEAD
 		76289E9B27CA3CC7009B70DD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+=======
+		7681D3AA27C1357D003A753A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		76EA7BF927C0F518004A56C1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+>>>>>>> 551e964201d62e1fd393424ff727de0433aa9ee9
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -760,17 +835,35 @@
 				kind = branch;
 			};
 		};
+<<<<<<< HEAD
 		76289EA027CA454C009B70DD /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.0.0;
+=======
+		76EA7BFF27C0F821004A56C1 /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		76EA7C0227C11634004A56C1 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+>>>>>>> 551e964201d62e1fd393424ff727de0433aa9ee9
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+<<<<<<< HEAD
 		76289E9C27CA3CC7009B70DD /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 76289E9B27CA3CC7009B70DD /* XCRemoteSwiftPackageReference "SnapKit" */;
@@ -780,6 +873,27 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 76289EA027CA454C009B70DD /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+=======
+		7681D3AC27C13766003A753A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7681D3AA27C1357D003A753A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		76EA7BFA27C0F518004A56C1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76EA7BF927C0F518004A56C1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		76EA7C0027C0F821004A56C1 /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76EA7BFF27C0F821004A56C1 /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+		76EA7C0327C11634004A56C1 /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76EA7C0227C11634004A56C1 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
+>>>>>>> 551e964201d62e1fd393424ff727de0433aa9ee9
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

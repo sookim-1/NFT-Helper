@@ -5,11 +5,12 @@
 //  Created by sookim on 2022/02/27.
 //
 
-import Foundation
+import UIKit
 
 final class NetworkManager {
     static let shared = NetworkManager()
-
+    let cache = NSCache<NSString, UIImage>()
+    
     private init() {}
 
     func getCollections(url: URL, completion: @escaping (Result<[AddressCollectionModel], NetWorkErrorMessage>) -> Void) {

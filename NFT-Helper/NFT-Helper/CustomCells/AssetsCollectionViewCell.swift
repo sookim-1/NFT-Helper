@@ -39,6 +39,10 @@ final class AssetsCollectionViewCell: UICollectionViewCell {
     }
     
     private func setUpLayout() {
+        contentView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
         assetImageView.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(padding)
             make.left.equalTo(contentView.snp.left).offset(padding)
@@ -48,9 +52,9 @@ final class AssetsCollectionViewCell: UICollectionViewCell {
         
         assetNameLabel.snp.makeConstraints { make in
             make.top.equalTo(assetImageView.snp.bottom).offset(12)
-            make.left.equalTo(assetImageView.snp.left).offset(padding)
-            make.right.equalTo(contentView.snp.right).offset(-padding)
+            make.centerX.equalTo(contentView.snp.centerX)
             make.height.equalTo(20)
+            make.width.equalTo(assetImageView.snp.width)
         }
     }
 }

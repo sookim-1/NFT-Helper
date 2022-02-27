@@ -12,7 +12,7 @@ final class NetworkManager {
 
     private init() {}
 
-    func getCollections(url: URL, completion: @escaping (Result<[AddressCollectionModel], Error>) -> Void) {
+    func getCollections(url: URL, completion: @escaping (Result<[AddressCollectionModel], NetWorkErrorMessage>) -> Void) {
         var request = URLRequest(url: url)
 
         request.httpMethod = "GET"
@@ -20,7 +20,7 @@ final class NetworkManager {
         URLSession.request(endpoint: request, completion: completion)
     }
     
-    func getCollectionStats(url: URL, completion: @escaping (Result<SingleAssetStatsModel, Error>) -> Void) {
+    func getCollectionStats(url: URL, completion: @escaping (Result<SingleAssetStatsModel, NetWorkErrorMessage>) -> Void) {
         var request = URLRequest(url: url)
 
         request.httpMethod = "GET"

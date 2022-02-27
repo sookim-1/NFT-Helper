@@ -94,6 +94,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		763DF3FE27CB2B9900D8F552 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				76289EA527CA46C5009B70DD /* CustomDefaultStyleTitleLabel.swift */,
+				76289EA727CA47A2009B70DD /* CustomDefaultStyleBodyLabel.swift */,
+				76289EA927CA484E009B70DD /* CustomDefaultStyleAlertVC.swift */,
+				76289E9727CA3A59009B70DD /* CustomDefaultStyleButton.swift */,
+				76289E9927CA3B5F009B70DD /* CustomDefaultStyleTextField.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		763DF3FF27CB2BB000D8F552 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				76289EA327CA456C009B70DD /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		763DF40027CB2BBC00D8F552 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				76EA7BD427C0CCAC004A56C1 /* LaunchScreen.storyboard */,
+				76EA7BD227C0CCAC004A56C1 /* Assets.xcassets */,
+				76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */,
+				76EA7BCB27C0CCA9004A56C1 /* SceneDelegate.swift */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		763DF40127CB2BD000D8F552 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				76EA7BCD27C0CCA9004A56C1 /* MainVC.swift */,
+				76289E9E27CA4203009B70DD /* NFTListVC.swift */,
+				76289E9527CA3750009B70DD /* SecondVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		76EA7BBD27C0CCA9004A56C1 = {
 			isa = PBXGroup;
 			children = (
@@ -117,19 +158,10 @@
 		76EA7BC827C0CCA9004A56C1 /* NFT-Helper */ = {
 			isa = PBXGroup;
 			children = (
-				76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */,
-				76EA7BCB27C0CCA9004A56C1 /* SceneDelegate.swift */,
-				76EA7BCD27C0CCA9004A56C1 /* MainVC.swift */,
-				76289E9E27CA4203009B70DD /* NFTListVC.swift */,
-				76289E9527CA3750009B70DD /* SecondVC.swift */,
-				76289EA327CA456C009B70DD /* UIViewController+Ext.swift */,
-				76289E9727CA3A59009B70DD /* CustomDefaultStyleButton.swift */,
-				76289E9927CA3B5F009B70DD /* CustomDefaultStyleTextField.swift */,
-				76289EA527CA46C5009B70DD /* CustomDefaultStyleTitleLabel.swift */,
-				76289EA727CA47A2009B70DD /* CustomDefaultStyleBodyLabel.swift */,
-				76289EA927CA484E009B70DD /* CustomDefaultStyleAlertVC.swift */,
-				76EA7BD227C0CCAC004A56C1 /* Assets.xcassets */,
-				76EA7BD427C0CCAC004A56C1 /* LaunchScreen.storyboard */,
+				763DF40127CB2BD000D8F552 /* Controllers */,
+				763DF3FF27CB2BB000D8F552 /* Extensions */,
+				763DF3FE27CB2B9900D8F552 /* CustomViews */,
+				763DF40027CB2BBC00D8F552 /* Supports */,
 				76EA7BD727C0CCAC004A56C1 /* Info.plist */,
 			);
 			path = "NFT-Helper";

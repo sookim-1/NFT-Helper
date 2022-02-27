@@ -22,6 +22,8 @@
 		763DF40927CB33B900D8F552 /* URLSession+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF40827CB33B900D8F552 /* URLSession+Ext.swift */; };
 		763DF40B27CB351000D8F552 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF40A27CB351000D8F552 /* EndPoint.swift */; };
 		763DF40E27CB392A00D8F552 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF40D27CB392A00D8F552 /* NetworkError.swift */; };
+		763DF41127CB3C4A00D8F552 /* AssetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF41027CB3C4A00D8F552 /* AssetsCollectionViewCell.swift */; };
+		763DF41327CB3D5E00D8F552 /* CustomAssetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF41227CB3D5E00D8F552 /* CustomAssetImageView.swift */; };
 		76EA7BCA27C0CCA9004A56C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */; };
 		76EA7BCC27C0CCA9004A56C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BCB27C0CCA9004A56C1 /* SceneDelegate.swift */; };
 		76EA7BCE27C0CCA9004A56C1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BCD27C0CCA9004A56C1 /* MainVC.swift */; };
@@ -63,6 +65,8 @@
 		763DF40827CB33B900D8F552 /* URLSession+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Ext.swift"; sourceTree = "<group>"; };
 		763DF40A27CB351000D8F552 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		763DF40D27CB392A00D8F552 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		763DF41027CB3C4A00D8F552 /* AssetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsCollectionViewCell.swift; sourceTree = "<group>"; };
+		763DF41227CB3D5E00D8F552 /* CustomAssetImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAssetImageView.swift; sourceTree = "<group>"; };
 		76EA7BC627C0CCA9004A56C1 /* NFT-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NFT-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76EA7BCB27C0CCA9004A56C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				76289EA927CA484E009B70DD /* CustomDefaultStyleAlertVC.swift */,
 				76289E9727CA3A59009B70DD /* CustomDefaultStyleButton.swift */,
 				76289E9927CA3B5F009B70DD /* CustomDefaultStyleTextField.swift */,
+				763DF41227CB3D5E00D8F552 /* CustomAssetImageView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -171,6 +176,14 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		763DF40F27CB3C1500D8F552 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				763DF41027CB3C4A00D8F552 /* AssetsCollectionViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 		76EA7BBD27C0CCA9004A56C1 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +211,7 @@
 				763DF40127CB2BD000D8F552 /* Controllers */,
 				763DF3FF27CB2BB000D8F552 /* Extensions */,
 				763DF3FE27CB2B9900D8F552 /* CustomViews */,
+				763DF40F27CB3C1500D8F552 /* CustomCells */,
 				763DF40027CB2BBC00D8F552 /* Supports */,
 				763DF40527CB328900D8F552 /* NetworkService */,
 				763DF40C27CB391B00D8F552 /* Errors */,
@@ -373,7 +387,9 @@
 				76289EA827CA47A2009B70DD /* CustomDefaultStyleBodyLabel.swift in Sources */,
 				76289E9F27CA4203009B70DD /* NFTListVC.swift in Sources */,
 				76EA7BCA27C0CCA9004A56C1 /* AppDelegate.swift in Sources */,
+				763DF41327CB3D5E00D8F552 /* CustomAssetImageView.swift in Sources */,
 				763DF40427CB300800D8F552 /* OpenseaModel.swift in Sources */,
+				763DF41127CB3C4A00D8F552 /* AssetsCollectionViewCell.swift in Sources */,
 				763DF40B27CB351000D8F552 /* EndPoint.swift in Sources */,
 				76289EA427CA456C009B70DD /* UIViewController+Ext.swift in Sources */,
 				76EA7BCC27C0CCA9004A56C1 /* SceneDelegate.swift in Sources */,

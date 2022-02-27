@@ -19,9 +19,14 @@ final class NFTListVC: UIViewController {
         title = "NFT 목록"
         configureNavigationBar()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 
     private func configureNavigationBar() {
-        navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 }

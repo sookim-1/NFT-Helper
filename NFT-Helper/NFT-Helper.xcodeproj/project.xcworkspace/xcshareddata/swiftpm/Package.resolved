@@ -2,6 +2,27 @@
   "object": {
     "pins": [
       {
+<<<<<<< HEAD
+=======
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": "master",
+          "revision": "4e1103600bef06bd26e42564063e8fe8c25ef3d2",
+          "version": null
+        }
+      },
+      {
+        "package": "ProgressHUD",
+        "repositoryURL": "https://github.com/relatedcode/ProgressHUD.git",
+        "state": {
+          "branch": "master",
+          "revision": "22c3f83268b4c47b4623fe3a9701af7310fa8d8a",
+          "version": null
+        }
+      },
+      {
+>>>>>>> 551e964201d62e1fd393424ff727de0433aa9ee9
         "package": "SnapKit",
         "repositoryURL": "https://github.com/SnapKit/SnapKit",
         "state": {
@@ -11,12 +32,21 @@
         }
       },
       {
+<<<<<<< HEAD
         "package": "Toast",
         "repositoryURL": "https://github.com/scalessec/Toast-Swift.git",
         "state": {
           "branch": null,
           "revision": "0c9493eeacb102cc614da385cfaaf475379f4ab4",
           "version": "5.0.1"
+=======
+        "package": "Starscream",
+        "repositoryURL": "https://github.com/daltoniam/Starscream.git",
+        "state": {
+          "branch": null,
+          "revision": "df8d82047f6654d8e4b655d1b1525c64e1059d21",
+          "version": "4.0.4"
+>>>>>>> 551e964201d62e1fd393424ff727de0433aa9ee9
         }
       }
     ]

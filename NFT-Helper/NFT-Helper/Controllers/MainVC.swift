@@ -33,7 +33,7 @@ final class MainVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.isNavigationBarHidden = true
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     
@@ -99,6 +99,8 @@ final class MainVC: UIViewController {
         let nftListVC = NFTListVC()
         nftListVC.walletAddress = walletAddressTextField.text
         navigationController?.pushViewController(nftListVC, animated: true)
+        
+        self.view.endEditing(true)
     }
 }
 

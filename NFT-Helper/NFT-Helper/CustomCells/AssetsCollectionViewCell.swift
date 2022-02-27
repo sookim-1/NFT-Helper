@@ -12,8 +12,8 @@ import SnapKit
 final class AssetsCollectionViewCell: UICollectionViewCell {
     static let reuseID = "AssetsCollectionViewCell"
 
-    let assetImageView = CustomAssetImageView(frame: .zero)
-    let assetNameLabel = CustomDefaultStyleTitleLabel(textAlignment: .center, fontSize: 16)
+    private let assetImageView = CustomAssetImageView(frame: .zero)
+    private let assetNameLabel = CustomDefaultStyleTitleLabel(textAlignment: .center, fontSize: 16)
 
     private let padding: CGFloat = 8
     
@@ -30,6 +30,7 @@ final class AssetsCollectionViewCell: UICollectionViewCell {
 
     func set(asset: AddressCollectionModel) {
         assetNameLabel.text = asset.name
+        assetImageView.downloadImage(from: asset.imageURL)
     }
 
     private func configure() {

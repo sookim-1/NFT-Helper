@@ -13,7 +13,7 @@ final class AssetsCollectionViewCell: UICollectionViewCell {
     static let reuseID = "AssetsCollectionViewCell"
 
     private let assetImageView = CustomAssetImageView(frame: .zero)
-    private let assetNameLabel = CustomDefaultStyleTitleLabel(textAlignment: .center, fontSize: 16)
+    private let assetNameLabel = CustomDefaultStyleTitleLabel(textAlignment: .center, fontSize: 12)
 
     private let padding: CGFloat = 8
     

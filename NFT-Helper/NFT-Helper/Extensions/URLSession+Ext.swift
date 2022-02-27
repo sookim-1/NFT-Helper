@@ -18,21 +18,21 @@ extension URLSession {
         return task
     }
 
-    static func request<T: Decodable>(_ session: URLSession = .shared, endpoint: URLRequest, completion: @escaping (Result<T, Error>) -> Void) {
+    static func request<T: Decodable>(_ session: URLSession = .shared, endpoint: URLRequest, completion: @escaping (Result<T, NetWorkErrorMessage>) -> Void) {
         session.dataTask(endpoint) { data, response, error in
             DispatchQueue.main.async {
                 guard error == nil else {
-                    completion(.failure(error!))
+                    completion(.failure(.invalidAddress))
                     return
                 }
 
                 guard let data = data else {
-                    completion(.failure(error!))
+                    completion(.failure(.invalidData))
                     return
                 }
 
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    completion(.failure(error!))
+                    completion(.failure(.invalidAddress))
                     return
                 }
 
@@ -41,7 +41,7 @@ extension URLSession {
                     let userData = try decoder.decode(T.self, from: data)
                     completion(.success(userData))
                 } catch {
-                    completion(.failure(error))
+                    completion(.failure(.decodeError))
                 }
             }
         }

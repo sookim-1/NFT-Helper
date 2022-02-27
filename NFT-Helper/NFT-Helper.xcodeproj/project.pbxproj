@@ -21,6 +21,7 @@
 		763DF40727CB32A100D8F552 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF40627CB32A100D8F552 /* NetworkManager.swift */; };
 		763DF40927CB33B900D8F552 /* URLSession+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF40827CB33B900D8F552 /* URLSession+Ext.swift */; };
 		763DF40B27CB351000D8F552 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF40A27CB351000D8F552 /* EndPoint.swift */; };
+		763DF40E27CB392A00D8F552 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF40D27CB392A00D8F552 /* NetworkError.swift */; };
 		76EA7BCA27C0CCA9004A56C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */; };
 		76EA7BCC27C0CCA9004A56C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BCB27C0CCA9004A56C1 /* SceneDelegate.swift */; };
 		76EA7BCE27C0CCA9004A56C1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BCD27C0CCA9004A56C1 /* MainVC.swift */; };
@@ -61,6 +62,7 @@
 		763DF40627CB32A100D8F552 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		763DF40827CB33B900D8F552 /* URLSession+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Ext.swift"; sourceTree = "<group>"; };
 		763DF40A27CB351000D8F552 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		763DF40D27CB392A00D8F552 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		76EA7BC627C0CCA9004A56C1 /* NFT-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NFT-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76EA7BCB27C0CCA9004A56C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,14 @@
 			path = NetworkService;
 			sourceTree = "<group>";
 		};
+		763DF40C27CB391B00D8F552 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				763DF40D27CB392A00D8F552 /* NetworkError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		76EA7BBD27C0CCA9004A56C1 = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +200,7 @@
 				763DF3FE27CB2B9900D8F552 /* CustomViews */,
 				763DF40027CB2BBC00D8F552 /* Supports */,
 				763DF40527CB328900D8F552 /* NetworkService */,
+				763DF40C27CB391B00D8F552 /* Errors */,
 				76EA7BD727C0CCAC004A56C1 /* Info.plist */,
 			);
 			path = "NFT-Helper";
@@ -351,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76289EAA27CA484E009B70DD /* CustomDefaultStyleAlertVC.swift in Sources */,
+				763DF40E27CB392A00D8F552 /* NetworkError.swift in Sources */,
 				76289E9827CA3A59009B70DD /* CustomDefaultStyleButton.swift in Sources */,
 				76289E9627CA3750009B70DD /* SecondVC.swift in Sources */,
 				763DF40727CB32A100D8F552 /* NetworkManager.swift in Sources */,

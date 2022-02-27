@@ -18,6 +18,7 @@ final class NFTListVC: UIViewController {
 
         title = "NFT 목록"
         configureNavigationBar()
+        getAddressCollections()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,5 +29,19 @@ final class NFTListVC: UIViewController {
 
     private func configureNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    // MARK: 네트워킹
+    
+    private func getAddressCollections() {
+        NetworkManager.shared.getCollections(url: Endpoint.collections(assetOwner: walletAddress, limit: 100).url) { result in
+            switch result {
+            case .success(let value):
+                print(value)
+            case .failure(let error):
+                self.presentDefaultStyleAlertVC(title: "에러", body: error.rawValue, buttonTitle: "확인")
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
 }

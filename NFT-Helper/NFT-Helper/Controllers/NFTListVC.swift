@@ -87,7 +87,9 @@ final class NFTListVC: UIViewController {
     // MARK: 네트워킹
     
     private func getAddressCollections() {
-        NetworkManager.shared.getCollections(url: Endpoint.collections(assetOwner: walletAddress, limit: 100).url) { result in
+        NetworkManager.shared.getCollections(url: Endpoint.collections(assetOwner: walletAddress, limit: 100).url) { [weak self] result in
+            guard let self = self else { return }
+            
             switch result {
             case .success(let value):
                 self.addressCollectionModels = value

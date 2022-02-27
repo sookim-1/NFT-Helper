@@ -28,7 +28,11 @@ final class CustomAssetImageView: UIImageView {
         image = placeholderImage
     }
 
-    func downloadImage(from urlString: String) {
+    func downloadImage(from urlString: String?) {
+        guard let urlString = urlString else {
+            return
+        }
+        
         let cacheKey = NSString(string: urlString)
 
         if let image = cache.object(forKey: cacheKey) {

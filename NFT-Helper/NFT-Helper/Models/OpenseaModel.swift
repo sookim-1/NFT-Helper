@@ -10,7 +10,7 @@ import Foundation
 struct AddressCollectionModel: Codable, Hashable {
     let name: String
     let externalURL: String?
-    let imageURL: String
+    let imageURL: String?
     let slug: String
     let ownedAssetCount: Int
 

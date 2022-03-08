@@ -144,6 +144,16 @@ extension NFTListVC: UICollectionViewDelegate {
             getAddressCollections(offset: offset, limit: limit)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let activeArray = isSearching ? filterdAddressCollectionModels : addressCollectionModels
+        let addressCollectionModel = activeArray[indexPath.item]
+        
+        let destVC = AssetModelInfoVC()
+        destVC.assetModelName = addressCollectionModel.name
+        let navController = UINavigationController(rootViewController: destVC)
+        present(navController, animated: true)
+    }
 }
 
 extension NFTListVC: UISearchResultsUpdating, UISearchBarDelegate {

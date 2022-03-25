@@ -16,7 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = AddressRegisterVC()
+        let firstLaunch = FirstLaunch(userDefaults: .standard, key: "firstLaunchKey")
+        if firstLaunch.isFirstLaunch {
+            window?.rootViewController = OnboardingVC()
+        } else {
+            window?.rootViewController = createTabbarController()
+        }
+        
         window?.backgroundColor = .systemBackground
         window?.makeKeyAndVisible()
         
@@ -60,7 +66,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return UINavigationController(rootViewController: vc)
     }
 
-    private func createTabbarController() -> UITabBarController {
+    func createTabbarController() -> UITabBarController {
         let tabbarController = UITabBarController()
         UITabBar.appearance().tintColor = .systemGreen
         UITabBar.appearance().backgroundColor = .systemGray6

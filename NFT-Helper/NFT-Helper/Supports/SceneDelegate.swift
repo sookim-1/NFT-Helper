@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = OnboardingVC()
+        window?.rootViewController = createTabbarController()
         window?.backgroundColor = .systemBackground
         window?.makeKeyAndVisible()
         
@@ -52,27 +52,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     // MARK: - 탭바 설정
-    private func createMainNC() -> UINavigationController {
-        let mainVC = MainVC()
-        mainVC.title = "NFT 도우미"
-        mainVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
-        
-        return UINavigationController(rootViewController: mainVC)
-    }
     
-    private func createSecondNC() -> UINavigationController {
-        let secondVC = SecondVC()
-        secondVC.title = "2번째 화면"
-        secondVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+    private func createTabbarSubVC(viewcotroller: UIViewController, tabBarStyle: UITabBarItem.SystemItem, tag: Int) -> UINavigationController {
+        let vc = viewcotroller
+        vc.tabBarItem = UITabBarItem(tabBarSystemItem: tabBarStyle, tag: tag)
         
-        return UINavigationController(rootViewController: secondVC)
+        return UINavigationController(rootViewController: vc)
     }
-    
-    func createTabbarController() -> UITabBarController {
+
+    private func createTabbarController() -> UITabBarController {
         let tabbarController = UITabBarController()
         UITabBar.appearance().tintColor = .systemGreen
         UITabBar.appearance().backgroundColor = .systemGray6
-        tabbarController.viewControllers = [createMainNC(), createSecondNC()]
+        tabbarController.viewControllers = [createTabbarSubVC(viewcotroller: MainVC(), tabBarStyle: .search, tag: 0),
+                                            createTabbarSubVC(viewcotroller: CalendarVC(), tabBarStyle: .bookmarks, tag: 1),
+                                            createTabbarSubVC(viewcotroller: CalculatorVC(), tabBarStyle: .featured, tag: 2),
+                                            createTabbarSubVC(viewcotroller: SettingVC(), tabBarStyle: .contacts, tag: 3)]
         
         return tabbarController
     }
@@ -82,10 +77,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UINavigationBar.appearance().tintColor = .systemGreen
         UINavigationBar.appearance().backgroundColor = .systemGray6
     }
-    
-    // testPrint()
-    func testPrint() {
-        print("Test!!")
-    }
+
 }
 

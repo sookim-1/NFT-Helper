@@ -29,6 +29,8 @@
 		767C5FF227ED89C400BD5B39 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FF127ED89C400BD5B39 /* OnboardingVC.swift */; };
 		767C5FF427ED8DD000BD5B39 /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FF327ED8DD000BD5B39 /* CalculatorVC.swift */; };
 		767C5FF627ED8E1200BD5B39 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FF527ED8E1200BD5B39 /* SettingVC.swift */; };
+		767C5FFA27ED91B800BD5B39 /* AddressRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FF927ED91B800BD5B39 /* AddressRegisterVC.swift */; };
+		767C5FFC27ED962D00BD5B39 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FFB27ED962D00BD5B39 /* UserDefaults+Ext.swift */; };
 		76E26DC627D6F306009B00E3 /* AssetModelInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E26DC527D6F306009B00E3 /* AssetModelInfoVC.swift */; };
 		76EA7BCA27C0CCA9004A56C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */; };
 		76EA7BCC27C0CCA9004A56C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BCB27C0CCA9004A56C1 /* SceneDelegate.swift */; };
@@ -78,6 +80,8 @@
 		767C5FF127ED89C400BD5B39 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		767C5FF327ED8DD000BD5B39 /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
 		767C5FF527ED8E1200BD5B39 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		767C5FF927ED91B800BD5B39 /* AddressRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRegisterVC.swift; sourceTree = "<group>"; };
+		767C5FFB27ED962D00BD5B39 /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
 		76E26DC527D6F306009B00E3 /* AssetModelInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModelInfoVC.swift; sourceTree = "<group>"; };
 		76EA7BC627C0CCA9004A56C1 /* NFT-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NFT-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 			children = (
 				76289EA327CA456C009B70DD /* UIViewController+Ext.swift */,
 				763DF40827CB33B900D8F552 /* URLSession+Ext.swift */,
+				767C5FFB27ED962D00BD5B39 /* UserDefaults+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 				76289E9527CA3750009B70DD /* CalendarVC.swift */,
 				767C5FF327ED8DD000BD5B39 /* CalculatorVC.swift */,
 				767C5FF527ED8E1200BD5B39 /* SettingVC.swift */,
+				767C5FF927ED91B800BD5B39 /* AddressRegisterVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -393,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				767C5FFA27ED91B800BD5B39 /* AddressRegisterVC.swift in Sources */,
 				76289EAA27CA484E009B70DD /* CustomDefaultStyleAlertVC.swift in Sources */,
 				767C5FF627ED8E1200BD5B39 /* SettingVC.swift in Sources */,
 				763DF40E27CB392A00D8F552 /* NetworkError.swift in Sources */,
@@ -408,6 +415,7 @@
 				76289EA827CA47A2009B70DD /* CustomDefaultStyleBodyLabel.swift in Sources */,
 				767C5FF427ED8DD000BD5B39 /* CalculatorVC.swift in Sources */,
 				76289E9F27CA4203009B70DD /* NFTListVC.swift in Sources */,
+				767C5FFC27ED962D00BD5B39 /* UserDefaults+Ext.swift in Sources */,
 				76EA7BCA27C0CCA9004A56C1 /* AppDelegate.swift in Sources */,
 				763DF41327CB3D5E00D8F552 /* CustomAssetImageView.swift in Sources */,
 				76E26DC627D6F306009B00E3 /* AssetModelInfoVC.swift in Sources */,

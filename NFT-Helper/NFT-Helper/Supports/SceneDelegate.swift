@@ -70,7 +70,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabbarController = UITabBarController()
         UITabBar.appearance().tintColor = .systemGreen
         UITabBar.appearance().backgroundColor = .systemGray6
-        tabbarController.viewControllers = [createTabbarSubVC(viewcotroller: MainVC(), tabBarStyle: .search, tag: 0),
+        tabbarController.viewControllers = [createTabbarSubVC(viewcotroller: NFTListVC(), tabBarStyle: .search, tag: 0),
                                             createTabbarSubVC(viewcotroller: CalendarVC(), tabBarStyle: .bookmarks, tag: 1),
                                             createTabbarSubVC(viewcotroller: CalculatorVC(), tabBarStyle: .featured, tag: 2),
                                             createTabbarSubVC(viewcotroller: SettingVC(), tabBarStyle: .contacts, tag: 3)]

@@ -154,15 +154,19 @@ final class AddressRegisterVC: UIViewController {
         switch addressType {
         case .none:
             print("none")
+            presentTabbarVC()
         case .metamask:
-            UserDefaults.matamaskAddress = walletAddressTextField.text
+            if isValidEtheriumAddress(text: walletAddressTextField.text) {
+                print("정상")
+                UserDefaults.metamaskAddress = walletAddressTextField.text
+                presentTabbarVC()
+            } else {
+                print("지갑주소 형식이 잘못되었습니다.")
+            }
         case .kaikas:
             UserDefaults.kaikasAddress =  walletAddressTextField.text
+            presentTabbarVC()
         }
-        
-        let sceneDelegate = UIApplication.shared.connectedScenes
-                .first!.delegate as! SceneDelegate
-        sceneDelegate.window!.rootViewController = sceneDelegate.createTabbarController()
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer) {
@@ -180,13 +184,24 @@ final class AddressRegisterVC: UIViewController {
         metamaskView.backgroundColor = .systemBackground
     }
     
+    private func isValidEtheriumAddress(text: String?) -> Bool {
+        let etheriumAddressRegEx = "^0x[a-fA-F0-9]{40}$"
+        let etheriumAddressValid = NSPredicate(format: "SELF MATCHES %@", etheriumAddressRegEx)
+        
+        return etheriumAddressValid.evaluate(with: text)
+    }
+    
+    private func presentTabbarVC() {
+        let sceneDelegate = UIApplication.shared.connectedScenes
+                .first!.delegate as! SceneDelegate
+        sceneDelegate.window!.rootViewController = sceneDelegate.createTabbarController()
+    }
+    
 }
 
 extension AddressRegisterVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let sceneDelegate = UIApplication.shared.connectedScenes
-                .first!.delegate as! SceneDelegate
-        sceneDelegate.window!.rootViewController = sceneDelegate.createTabbarController()
+        presentTabbarVC()
         
         return true
     }

@@ -33,6 +33,7 @@ final class NFTListVC: UIViewController {
         super.viewDidLoad()
 
         title = "NFT 목록"
+        configureWalletAddress()
         configureNavigationBar()
         configureSearchController()
         configureCollectionView()
@@ -46,6 +47,11 @@ final class NFTListVC: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
+    private func configureWalletAddress() {
+        if UserDefaults.metamaskAddress != "" {
+            walletAddress = UserDefaults.metamaskAddress
+        }
+    }
     
     // MARK: UIKit
     private func configureNavigationBar() {

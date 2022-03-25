@@ -24,8 +24,8 @@ struct UserDefault<T> {
 }
 
 extension UserDefaults {
-    @UserDefault(key: "matamaskAddress", defaultValue: "")
-    static var matamaskAddress: String?
+    @UserDefault(key: "metamaskAddress", defaultValue: "")
+    static var metamaskAddress: String?
     
     @UserDefault(key: "kaikasAddress", defaultValue: "")
     static var kaikasAddress: String?

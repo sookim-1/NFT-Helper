@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = createTabbarController()
+        window?.rootViewController = OnboardingVC()
         window?.backgroundColor = .systemBackground
         window?.makeKeyAndVisible()
         
@@ -68,7 +68,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return UINavigationController(rootViewController: secondVC)
     }
     
-    private func createTabbarController() -> UITabBarController {
+    func createTabbarController() -> UITabBarController {
         let tabbarController = UITabBarController()
         UITabBar.appearance().tintColor = .systemGreen
         UITabBar.appearance().backgroundColor = .systemGray6
@@ -81,6 +81,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private func configureNavigationBar() {
         UINavigationBar.appearance().tintColor = .systemGreen
         UINavigationBar.appearance().backgroundColor = .systemGray6
+    }
+    
+    // testPrint()
+    func testPrint() {
+        print("Test!!")
     }
 }
 

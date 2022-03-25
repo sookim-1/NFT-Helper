@@ -160,7 +160,9 @@ final class AddressRegisterVC: UIViewController {
             UserDefaults.kaikasAddress =  walletAddressTextField.text
         }
         
-        present(MainVC(), animated: true)
+        let sceneDelegate = UIApplication.shared.connectedScenes
+                .first!.delegate as! SceneDelegate
+        sceneDelegate.window!.rootViewController = sceneDelegate.createTabbarController()
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer) {
@@ -182,7 +184,9 @@ final class AddressRegisterVC: UIViewController {
 
 extension AddressRegisterVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        present(MainVC(), animated: true)
+        let sceneDelegate = UIApplication.shared.connectedScenes
+                .first!.delegate as! SceneDelegate
+        sceneDelegate.window!.rootViewController = sceneDelegate.createTabbarController()
         
         return true
     }

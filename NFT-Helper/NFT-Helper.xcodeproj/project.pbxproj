@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7627E44827F2146500A17FB0 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 7627E44727F2146500A17FB0 /* SwiftSoup */; };
 		76289E9627CA3750009B70DD /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76289E9527CA3750009B70DD /* CalendarVC.swift */; };
 		76289E9827CA3A59009B70DD /* CustomDefaultStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76289E9727CA3A59009B70DD /* CustomDefaultStyleButton.swift */; };
 		76289E9A27CA3B5F009B70DD /* CustomDefaultStyleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76289E9927CA3B5F009B70DD /* CustomDefaultStyleTextField.swift */; };
@@ -106,6 +107,7 @@
 			files = (
 				76289EA227CA454C009B70DD /* Toast in Frameworks */,
 				76289E9D27CA3CC7009B70DD /* SnapKit in Frameworks */,
+				7627E44827F2146500A17FB0 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +293,7 @@
 			packageProductDependencies = (
 				76289E9C27CA3CC7009B70DD /* SnapKit */,
 				76289EA127CA454C009B70DD /* Toast */,
+				7627E44727F2146500A17FB0 /* SwiftSoup */,
 			);
 			productName = "NFT-Helper";
 			productReference = 76EA7BC627C0CCA9004A56C1 /* NFT-Helper.app */;
@@ -367,6 +370,7 @@
 			packageReferences = (
 				76289E9B27CA3CC7009B70DD /* XCRemoteSwiftPackageReference "SnapKit" */,
 				76289EA027CA454C009B70DD /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				7627E44627F2146500A17FB0 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = 76EA7BC727C0CCA9004A56C1 /* Products */;
 			projectDirPath = "";
@@ -796,6 +800,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7627E44627F2146500A17FB0 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.8;
+			};
+		};
 		76289E9B27CA3CC7009B70DD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -815,6 +827,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7627E44727F2146500A17FB0 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7627E44627F2146500A17FB0 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
 		76289E9C27CA3CC7009B70DD /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 76289E9B27CA3CC7009B70DD /* XCRemoteSwiftPackageReference "SnapKit" */;

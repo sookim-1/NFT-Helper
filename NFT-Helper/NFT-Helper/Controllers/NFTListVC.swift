@@ -8,6 +8,7 @@
 import UIKit
 
 import SnapKit
+import SwiftSoup
 
 final class NFTListVC: UIViewController {
 
@@ -16,6 +17,7 @@ final class NFTListVC: UIViewController {
     }
     
     var walletAddress: String!
+    var slugArray: [String] = []
     
     private var addressCollectionModels: [AddressCollectionModel] = []
     private var filterdAddressCollectionModels: [AddressCollectionModel] = []
@@ -33,11 +35,18 @@ final class NFTListVC: UIViewController {
         super.viewDidLoad()
 
         title = "NFT 목록"
-        configureWalletAddress()
+//        configureWalletAddress()
+
+
+        
+//        getAddressCollections(offset: offset, limit: limit)
+        
+        scrappingWalletAddress()
+        kaikasGetAddressCollection(slugArray: slugArray)
+        
         configureNavigationBar()
         configureSearchController()
         configureCollectionView()
-        getAddressCollections(offset: offset, limit: limit)
         configureDataSource()
     }
     
@@ -136,6 +145,54 @@ final class NFTListVC: UIViewController {
             }
         }
     }
+    
+    private func kaikasGetAddressCollection(slugArray: [String]) {
+        showLoadingView()
+        let setResult: Set<String> = Set(slugArray)
+        let arrayResult = Array(setResult)
+        print("\(arrayResult)")
+        
+        for i in arrayResult {
+            NetworkManager.shared.addCollection(url: Endpoint.kaikasCollection(slug: i).url) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case . success(let value):
+                    let addressCollection = AddressCollectionModel(name: value.collection.name, externalURL: value.collection.externalURL, imageURL: value.collection.imageURL, slug: i)
+                    self.addressCollectionModels.append(addressCollection)
+                    self.updateData(on: self.addressCollectionModels)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+        
+        dismissLoadingView()
+    }
+    
+    
+    // MARK: Kaikas 지갑
+    private func scrappingWalletAddress() {
+        self.walletAddress = "0xd3F470C90461509c664f777179e2daF8ee176877"
+        guard let url = URL(string: "https://opensea.io/" + self.walletAddress) else { return }
+        
+        do {
+           let html = try String(contentsOf: url, encoding: .utf8)
+           let doc: Document = try SwiftSoup.parse(html)
+        
+           let elements: Elements = try doc.getElementsByClass("Blockreact__Block-sc-1xf18x6-0 hjbqQx").select("a")
+
+           for element in elements.array() {
+               let link = try element.attr("href")
+               let startIdx: String.Index = link.index(link.startIndex, offsetBy: 12)
+               let result = String(link[startIdx...])
+               slugArray.append(result)
+           }
+       } catch let error {
+           print("에러 : \(error)")
+       }
+    }
+    
+    
 }
 
 extension NFTListVC: UICollectionViewDelegate {

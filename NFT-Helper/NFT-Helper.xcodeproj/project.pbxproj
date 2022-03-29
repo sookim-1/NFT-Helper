@@ -33,6 +33,7 @@
 		767C5FFA27ED91B800BD5B39 /* AddressRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FF927ED91B800BD5B39 /* AddressRegisterVC.swift */; };
 		767C5FFC27ED962D00BD5B39 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FFB27ED962D00BD5B39 /* UserDefaults+Ext.swift */; };
 		767C5FFF27EDA21900BD5B39 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FFE27EDA21900BD5B39 /* FirstLaunch.swift */; };
+		76BC92F827F2EAF900D763CB /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BC92F727F2EAF900D763CB /* EmptyStateView.swift */; };
 		76E26DC627D6F306009B00E3 /* AssetModelInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E26DC527D6F306009B00E3 /* AssetModelInfoVC.swift */; };
 		76EA7BCA27C0CCA9004A56C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */; };
 		76EA7BCC27C0CCA9004A56C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BCB27C0CCA9004A56C1 /* SceneDelegate.swift */; };
@@ -85,6 +86,7 @@
 		767C5FF927ED91B800BD5B39 /* AddressRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRegisterVC.swift; sourceTree = "<group>"; };
 		767C5FFB27ED962D00BD5B39 /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
 		767C5FFE27EDA21900BD5B39 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
+		76BC92F727F2EAF900D763CB /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		76E26DC527D6F306009B00E3 /* AssetModelInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModelInfoVC.swift; sourceTree = "<group>"; };
 		76EA7BC627C0CCA9004A56C1 /* NFT-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NFT-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		763DF3FE27CB2B9900D8F552 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				76BC92F627F2EADE00D763CB /* Views */,
 				76289EA527CA46C5009B70DD /* CustomDefaultStyleTitleLabel.swift */,
 				76289EA727CA47A2009B70DD /* CustomDefaultStyleBodyLabel.swift */,
 				76289EA927CA484E009B70DD /* CustomDefaultStyleAlertVC.swift */,
@@ -218,6 +221,14 @@
 				767C5FFE27EDA21900BD5B39 /* FirstLaunch.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		76BC92F627F2EADE00D763CB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				76BC92F727F2EAF900D763CB /* EmptyStateView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		76EA7BBD27C0CCA9004A56C1 = {
@@ -420,6 +431,7 @@
 				763DF40E27CB392A00D8F552 /* NetworkError.swift in Sources */,
 				76289E9827CA3A59009B70DD /* CustomDefaultStyleButton.swift in Sources */,
 				76289E9627CA3750009B70DD /* CalendarVC.swift in Sources */,
+				76BC92F827F2EAF900D763CB /* EmptyStateView.swift in Sources */,
 				767C5FFF27EDA21900BD5B39 /* FirstLaunch.swift in Sources */,
 				763DF40727CB32A100D8F552 /* NetworkManager.swift in Sources */,
 				763DF40927CB33B900D8F552 /* URLSession+Ext.swift in Sources */,

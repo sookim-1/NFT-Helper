@@ -35,19 +35,12 @@ final class NFTListVC: UIViewController {
         super.viewDidLoad()
 
         title = "NFT 목록"
-//        configureWalletAddress()
-
-
-        
-//        getAddressCollections(offset: offset, limit: limit)
-        
-        scrappingWalletAddress()
-        kaikasGetAddressCollection(slugArray: slugArray)
-        
         configureNavigationBar()
         configureSearchController()
         configureCollectionView()
         configureDataSource()
+        scrappingWalletAddress()
+        kaikasGetAddressCollection(slugArray: slugArray)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,11 +72,15 @@ final class NFTListVC: UIViewController {
     // MARK: 컬렉션뷰 초기화
     
     private func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createThreeColumnFlowLayout())
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: createThreeColumnFlowLayout())
         view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.backgroundColor = .systemBackground
         collectionView.register(AssetsCollectionViewCell.self, forCellWithReuseIdentifier: AssetsCollectionViewCell.reuseID)
+        
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     private func createThreeColumnFlowLayout() -> UICollectionViewFlowLayout {
@@ -121,8 +118,7 @@ final class NFTListVC: UIViewController {
         }
     }
     
-    // MARK: 네트워킹
-    
+    // MARK: 메타마스크 지원 API
     private func getAddressCollections(offset: Int, limit: Int) {
         showLoadingView()
         NetworkManager.shared.getCollections(url: Endpoint.collections(assetOwner: walletAddress, offset: offset, limit: limit).url) { [weak self] result in
@@ -146,22 +142,26 @@ final class NFTListVC: UIViewController {
         }
     }
     
+    // MARK: 카이카스 지원 API
     private func kaikasGetAddressCollection(slugArray: [String]) {
         showLoadingView()
         let setResult: Set<String> = Set(slugArray)
         let arrayResult = Array(setResult)
         print("\(arrayResult)")
-        
+        if arrayResult.isEmpty {
+            self.showEmptyStateView(with: "NFT작품이 없어요😱", in: self.view)
+            return
+        }
         for i in arrayResult {
             NetworkManager.shared.addCollection(url: Endpoint.kaikasCollection(slug: i).url) { [weak self] result in
                 guard let self = self else { return }
                 switch result {
-                case . success(let value):
+                case .success(let value):
                     let addressCollection = AddressCollectionModel(name: value.collection.name, externalURL: value.collection.externalURL, imageURL: value.collection.imageURL, slug: i)
                     self.addressCollectionModels.append(addressCollection)
                     self.updateData(on: self.addressCollectionModels)
                 case .failure(let error):
-                    print(error)
+                    self.presentDefaultStyleAlertVC(title: "에러", body: error.rawValue, buttonTitle: "확인")
                 }
             }
         }
@@ -172,7 +172,7 @@ final class NFTListVC: UIViewController {
     
     // MARK: Kaikas 지갑
     private func scrappingWalletAddress() {
-        self.walletAddress = "0xd3F470C90461509c664f777179e2daF8ee176877"
+        self.walletAddress = "0xA6D3a33a1C66083859765b9D6E407D095a908193"
         guard let url = URL(string: "https://opensea.io/" + self.walletAddress) else { return }
         
         do {
@@ -202,9 +202,10 @@ extension NFTListVC: UICollectionViewDelegate {
         let height = scrollView.frame.size.height
         
         if offsetY > contentHeight - height {
-            guard hasMoreModels else { return }
-            limit += 10
-            getAddressCollections(offset: offset, limit: limit)
+//            guard hasMoreModels else { return }
+//            limit += 10
+//            getAddressCollections(offset: offset, limit: limit)
+            print("페이지넘김")
         }
     }
     

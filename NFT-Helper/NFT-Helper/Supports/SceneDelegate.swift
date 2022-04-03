@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if firstLaunch.isFirstLaunch {
             window?.rootViewController = OnboardingVC()
         } else {
-            window?.rootViewController = createTabbarController()
+            window?.rootViewController = CustomTabBarController()
         }
         
         window?.backgroundColor = .systemBackground
@@ -55,27 +55,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-    }
-
-    // MARK: - 탭바 설정
-    
-    private func createTabbarSubVC(viewcotroller: UIViewController, tabBarStyle: UITabBarItem.SystemItem, tag: Int) -> UINavigationController {
-        let vc = viewcotroller
-        vc.tabBarItem = UITabBarItem(tabBarSystemItem: tabBarStyle, tag: tag)
-        
-        return UINavigationController(rootViewController: vc)
-    }
-
-    func createTabbarController() -> UITabBarController {
-        let tabbarController = UITabBarController()
-        UITabBar.appearance().tintColor = .systemGreen
-        UITabBar.appearance().backgroundColor = .systemGray6
-        tabbarController.viewControllers = [createTabbarSubVC(viewcotroller: NFTListVC(), tabBarStyle: .search, tag: 0),
-                                            createTabbarSubVC(viewcotroller: CalendarVC(), tabBarStyle: .bookmarks, tag: 1),
-                                            createTabbarSubVC(viewcotroller: CalculatorVC(), tabBarStyle: .featured, tag: 2),
-                                            createTabbarSubVC(viewcotroller: SettingVC(), tabBarStyle: .contacts, tag: 3)]
-        
-        return tabbarController
     }
     
     // MARK: - 네비게이션바 설정

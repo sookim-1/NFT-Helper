@@ -24,9 +24,6 @@ struct UserDefault<T> {
 }
 
 extension UserDefaults {
-    @UserDefault(key: "metamaskAddress", defaultValue: "")
-    static var metamaskAddress: String?
-    
-    @UserDefault(key: "kaikasAddress", defaultValue: "")
-    static var kaikasAddress: String?
+    @UserDefault(key: "walletAddress", defaultValue: "")
+    static var walletAddress: String?
 }

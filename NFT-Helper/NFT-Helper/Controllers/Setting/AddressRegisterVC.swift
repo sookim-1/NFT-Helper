@@ -9,12 +9,6 @@ import UIKit
 
 import SnapKit
 
-enum AddressType {
-    case none
-    case metamask
-    case kaikas
-}
-
 final class AddressRegisterVC: UIViewController {
     lazy var authDescriptionLabel = CustomDefaultStyleTitleLabel(textAlignment: .center, fontSize: 24)
     lazy var walletAddressTextField = CustomDefaultStyleTextField(placeholder: "지갑주소를 입력해주세요")
@@ -45,6 +39,7 @@ final class AddressRegisterVC: UIViewController {
     private let kaikasLabel = UILabel()
 
     private let registerButton: CustomDefaultStyleButton = CustomDefaultStyleButton(backgroundColor: .systemGreen, title: "등록하기")
+    var isFirst: Bool?
     
     lazy var addressStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [metamaskView, kaikasView])
@@ -57,9 +52,18 @@ final class AddressRegisterVC: UIViewController {
     
     private var addressType: AddressType = .none
     
+    init(isFirst: Bool) {
+        super.init(nibName: nil, bundle: nil)
+        
+        self.isFirst = isFirst
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         configure()
         setUpConstraints()
@@ -67,15 +71,10 @@ final class AddressRegisterVC: UIViewController {
     }
 
     private func configure() {
-        view.addSubview(authDescriptionLabel)
-        view.addSubview(addressStackView)
-        view.addSubview(walletAddressTextField)
-        view.addSubview(registerButton)
-        
-        metamaskView.addSubview(metamaskImageView)
-        metamaskView.addSubview(metamaskLabel)
-        kaikasView.addSubview(kaikasImageView)
-        kaikasView.addSubview(kaikasLabel)
+        view.backgroundColor = .systemBackground
+        view.addSubviews(authDescriptionLabel, addressStackView, walletAddressTextField, registerButton)
+        metamaskView.addSubviews(metamaskImageView, metamaskLabel)
+        kaikasView.addSubviews(kaikasImageView, kaikasLabel)
         
         authDescriptionLabel.text = "지갑주소를 등록해주세요\n생략 가능"
         authDescriptionLabel.numberOfLines = 0
@@ -94,6 +93,7 @@ final class AddressRegisterVC: UIViewController {
     private func configureTextField() {
         walletAddressTextField.delegate = self
         walletAddressTextField.returnKeyType = .go
+        walletAddressTextField.clearButtonMode = .whileEditing
     }
     
     private func setUpConstraints() {
@@ -151,50 +151,55 @@ final class AddressRegisterVC: UIViewController {
     }
     
     @objc func presentNextVC() {
-        switch addressType {
-        case .none:
-            print("none")
-            presentTabbarVC()
-        case .metamask:
-            if isValidEtheriumAddress(text: walletAddressTextField.text) {
-                print("정상")
-                UserDefaults.metamaskAddress = walletAddressTextField.text
+        
+        if (addressType != .none) && !isValidAddress(text: walletAddressTextField.text) {
+            self.presentDefaultStyleAlertVC(title: "에러", body: "지갑주소형식이 잘못되었습니다.", buttonTitle: "확인")
+        } else {
+            if isFirst! {
+                UserDefaults.walletAddress = walletAddressTextField.text
+                
                 presentTabbarVC()
-            } else {
-                print("지갑주소 형식이 잘못되었습니다.")
             }
-        case .kaikas:
-            UserDefaults.kaikasAddress =  walletAddressTextField.text
-            presentTabbarVC()
+            else {
+                let model = WalletAddress(address: walletAddressTextField.text!, type: addressType)
+                PersistenceManager.updateWith(addressModel: model, actionType: .add) { error in
+                    guard let _ = error else {
+                        DispatchQueue.main.async {
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                        return
+                    }
+                    print("에러")
+                }
+            }
         }
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer) {
-        print("메타마스크 등록", walletAddressTextField.text!)
         addressType = .metamask
         metamaskView.backgroundColor = .systemGreen.withAlphaComponent(0.7)
         kaikasView.backgroundColor = .systemBackground
-        
     }
     
     @objc func handleTap2(sender: UITapGestureRecognizer) {
-        print("카이카스 등록", walletAddressTextField.text!)
         addressType = .kaikas
         kaikasView.backgroundColor = .systemGreen.withAlphaComponent(0.7)
         metamaskView.backgroundColor = .systemBackground
     }
     
-    private func isValidEtheriumAddress(text: String?) -> Bool {
-        let etheriumAddressRegEx = "^0x[a-fA-F0-9]{40}$"
-        let etheriumAddressValid = NSPredicate(format: "SELF MATCHES %@", etheriumAddressRegEx)
+    private func isValidAddress(text: String?) -> Bool {
+        let addressRegEx = "^0x[a-fA-F0-9]{40}$"
+        let addressValid = NSPredicate(format: "SELF MATCHES %@", addressRegEx)
         
-        return etheriumAddressValid.evaluate(with: text)
+        return addressValid.evaluate(with: text)
     }
     
     private func presentTabbarVC() {
-        let sceneDelegate = UIApplication.shared.connectedScenes
-                .first!.delegate as! SceneDelegate
-        sceneDelegate.window!.rootViewController = sceneDelegate.createTabbarController()
+        DispatchQueue.main.async {
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+            windowScene.windows.first?.rootViewController = CustomTabBarController()
+            windowScene.windows.first?.makeKeyAndVisible()
+        }
     }
     
 }

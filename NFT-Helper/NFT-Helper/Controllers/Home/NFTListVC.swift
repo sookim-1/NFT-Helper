@@ -16,15 +16,11 @@ final class NFTListVC: UIViewController {
         case main
     }
     
-    var walletAddress: String!
+    var walletAddress: String?
     var slugArray: [String] = []
     
     private var addressCollectionModels: [AddressCollectionModel] = []
     private var filterdAddressCollectionModels: [AddressCollectionModel] = []
-    
-    private var offset: Int = 0
-    private var limit: Int = 10
-    private var hasMoreModels = true
     private var isSearching = false
     
     private var collectionView: UICollectionView!
@@ -34,24 +30,30 @@ final class NFTListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "NFT 목록"
         configureNavigationBar()
         configureSearchController()
         configureCollectionView()
         configureDataSource()
-        scrappingWalletAddress()
-        kaikasGetAddressCollection(slugArray: slugArray)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(false, animated: true)
+        addressCollectionModels = []
+        filterdAddressCollectionModels = []
+        slugArray = []
+        configureWalletAddress()
+        scrappingWalletAddress()
+        kaikasGetAddressCollection(slugArray: slugArray)
+        collectionView.reloadData()
     }
 
     private func configureWalletAddress() {
-        if UserDefaults.metamaskAddress != "" {
-            walletAddress = UserDefaults.metamaskAddress
+        if UserDefaults.walletAddress != "" {
+            walletAddress = UserDefaults.walletAddress
+        } else {
+            walletAddress = nil
         }
     }
     
@@ -119,39 +121,38 @@ final class NFTListVC: UIViewController {
     }
     
     // MARK: 메타마스크 지원 API
-    private func getAddressCollections(offset: Int, limit: Int) {
-        showLoadingView()
-        NetworkManager.shared.getCollections(url: Endpoint.collections(assetOwner: walletAddress, offset: offset, limit: limit).url) { [weak self] result in
-            guard let self = self else { return }
-            
-            self.dismissLoadingView()
-            switch result {
-            case .success(let value):
-                if value.count < 10 { self.hasMoreModels = false }
-                self.addressCollectionModels.append(contentsOf: value)
-                
-                if self.addressCollectionModels.isEmpty {
-                    print("자산 모델이 없습니다.")
-                    return
-                }
-                self.updateData(on: value)
-            case .failure(let error):
-                self.presentDefaultStyleAlertVC(title: "에러", body: error.rawValue, buttonTitle: "확인")
-                self.navigationController?.popViewController(animated: true)
-            }
-        }
-    }
+//    private func getAddressCollections(offset: Int, limit: Int) {
+//        showLoadingView()
+//        NetworkManager.shared.getCollections(url: Endpoint.collections(assetOwner: walletAddress, offset: offset, limit: limit).url) { [weak self] result in
+//            guard let self = self else { return }
+//
+//            self.dismissLoadingView()
+//            switch result {
+//            case .success(let value):
+//                if value.count < 10 { self.hasMoreModels = false }
+//                self.addressCollectionModels.append(contentsOf: value)
+//
+//                if self.addressCollectionModels.isEmpty {
+//                    print("자산 모델이 없습니다.")
+//                    return
+//                }
+//                self.updateData(on: value)
+//            case .failure(let error):
+//                self.presentDefaultStyleAlertVC(title: "에러", body: error.rawValue, buttonTitle: "확인")
+//                self.navigationController?.popViewController(animated: true)
+//            }
+//        }
+//    }
     
     // MARK: 카이카스 지원 API
     private func kaikasGetAddressCollection(slugArray: [String]) {
         showLoadingView()
+        
         let setResult: Set<String> = Set(slugArray)
         let arrayResult = Array(setResult)
+        
         print("\(arrayResult)")
-        if arrayResult.isEmpty {
-            self.showEmptyStateView(with: "NFT작품이 없어요😱", in: self.view)
-            return
-        }
+        
         for i in arrayResult {
             NetworkManager.shared.addCollection(url: Endpoint.kaikasCollection(slug: i).url) { [weak self] result in
                 guard let self = self else { return }
@@ -172,8 +173,12 @@ final class NFTListVC: UIViewController {
     
     // MARK: Kaikas 지갑
     private func scrappingWalletAddress() {
-        self.walletAddress = "0xA6D3a33a1C66083859765b9D6E407D095a908193"
-        guard let url = URL(string: "https://opensea.io/" + self.walletAddress) else { return }
+        
+        guard let walletAddress = walletAddress else {
+            self.showEmptyStateView(with: "NFT작품이 없어요😱", in: self.view)
+            return
+        }
+        guard let url = URL(string: "https://opensea.io/\(walletAddress)") else { return }
         
         do {
            let html = try String(contentsOf: url, encoding: .utf8)
@@ -188,10 +193,9 @@ final class NFTListVC: UIViewController {
                slugArray.append(result)
            }
        } catch let error {
-           print("에러 : \(error)")
+           print("크롤링 에러 : \(error)")
        }
     }
-    
     
 }
 

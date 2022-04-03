@@ -98,7 +98,7 @@ final class OnboardingVC: UIViewController {
         if currentPage == slides.count - 1 {
             DispatchQueue.main.async {
                 guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-                windowScene.windows.first?.rootViewController = AddressRegisterVC()
+                windowScene.windows.first?.rootViewController = AddressRegisterVC(isFirst: true)
                 windowScene.windows.first?.makeKeyAndVisible()
             }
         }

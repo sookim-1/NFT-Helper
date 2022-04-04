@@ -12,6 +12,13 @@
 		7621A11F27FA06CD00452446 /* WalletAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7621A11E27FA06CD00452446 /* WalletAddress.swift */; };
 		7621A12227FA073B00452446 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7621A12127FA073B00452446 /* AddressTableViewCell.swift */; };
 		7621A12527FA093000452446 /* PersistenceMangager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7621A12427FA093000452446 /* PersistenceMangager.swift */; };
+		7621A12827FA14A500452446 /* ItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7621A12727FA14A500452446 /* ItemInfoVC.swift */; };
+		7621A12A27FA16DB00452446 /* ItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7621A12927FA16DB00452446 /* ItemInfoView.swift */; };
+		7621A12C27FA18D700452446 /* AssetNameItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7621A12B27FA18D700452446 /* AssetNameItemInfoVC.swift */; };
+		7621A12E27FA1E2800452446 /* AssetModelInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7621A12D27FA1E2800452446 /* AssetModelInfoHeaderVC.swift */; };
+		7621A13227FA206400452446 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 7621A13127FA206400452446 /* Starscream */; };
+		7621A13527FA207000452446 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7621A13427FA207000452446 /* Alamofire */; };
+		7621A13827FA207B00452446 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 7621A13727FA207B00452446 /* ProgressHUD */; };
 		7627E44827F2146500A17FB0 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 7627E44727F2146500A17FB0 /* SwiftSoup */; };
 		76289E9627CA3750009B70DD /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76289E9527CA3750009B70DD /* CalendarVC.swift */; };
 		76289E9827CA3A59009B70DD /* CustomDefaultStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76289E9727CA3A59009B70DD /* CustomDefaultStyleButton.swift */; };
@@ -30,6 +37,7 @@
 		763DF40E27CB392A00D8F552 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF40D27CB392A00D8F552 /* NetworkError.swift */; };
 		763DF41127CB3C4A00D8F552 /* AssetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF41027CB3C4A00D8F552 /* AssetsCollectionViewCell.swift */; };
 		763DF41327CB3D5E00D8F552 /* CustomAssetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF41227CB3D5E00D8F552 /* CustomAssetImageView.swift */; };
+		7662EC1527FAABB9005B4596 /* AssetPriceItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7662EC1427FAABB8005B4596 /* AssetPriceItemInfoVC.swift */; };
 		767C5FEE27ED895800BD5B39 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FED27ED895800BD5B39 /* OnboardingCollectionViewCell.swift */; };
 		767C5FF027ED899600BD5B39 /* OnboardingSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FEF27ED899600BD5B39 /* OnboardingSlides.swift */; };
 		767C5FF227ED89C400BD5B39 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FF127ED89C400BD5B39 /* OnboardingVC.swift */; };
@@ -73,6 +81,10 @@
 		7621A11E27FA06CD00452446 /* WalletAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAddress.swift; sourceTree = "<group>"; };
 		7621A12127FA073B00452446 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		7621A12427FA093000452446 /* PersistenceMangager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceMangager.swift; sourceTree = "<group>"; };
+		7621A12727FA14A500452446 /* ItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoVC.swift; sourceTree = "<group>"; };
+		7621A12927FA16DB00452446 /* ItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoView.swift; sourceTree = "<group>"; };
+		7621A12B27FA18D700452446 /* AssetNameItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetNameItemInfoVC.swift; sourceTree = "<group>"; };
+		7621A12D27FA1E2800452446 /* AssetModelInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModelInfoHeaderVC.swift; sourceTree = "<group>"; };
 		76289E9527CA3750009B70DD /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		76289E9727CA3A59009B70DD /* CustomDefaultStyleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDefaultStyleButton.swift; sourceTree = "<group>"; };
 		76289E9927CA3B5F009B70DD /* CustomDefaultStyleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDefaultStyleTextField.swift; sourceTree = "<group>"; };
@@ -88,6 +100,7 @@
 		763DF40D27CB392A00D8F552 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		763DF41027CB3C4A00D8F552 /* AssetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsCollectionViewCell.swift; sourceTree = "<group>"; };
 		763DF41227CB3D5E00D8F552 /* CustomAssetImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAssetImageView.swift; sourceTree = "<group>"; };
+		7662EC1427FAABB8005B4596 /* AssetPriceItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetPriceItemInfoVC.swift; sourceTree = "<group>"; };
 		767C5FED27ED895800BD5B39 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		767C5FEF27ED899600BD5B39 /* OnboardingSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlides.swift; sourceTree = "<group>"; };
 		767C5FF127ED89C400BD5B39 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
@@ -117,9 +130,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7621A13527FA207000452446 /* Alamofire in Frameworks */,
 				76289EA227CA454C009B70DD /* Toast in Frameworks */,
 				76289E9D27CA3CC7009B70DD /* SnapKit in Frameworks */,
+				7621A13827FA207B00452446 /* ProgressHUD in Frameworks */,
 				7627E44827F2146500A17FB0 /* SwiftSoup in Frameworks */,
+				7621A13227FA206400452446 /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +159,9 @@
 		7621A11827F9FBDE00452446 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7621A12627FA148800452446 /* ItemInfoVC */,
 				7621A11927F9FC0900452446 /* CustomTabBarController.swift */,
+				7621A12D27FA1E2800452446 /* AssetModelInfoHeaderVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -152,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				76289E9E27CA4203009B70DD /* NFTListVC.swift */,
+				76E26DC527D6F306009B00E3 /* AssetModelInfoVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -171,6 +190,24 @@
 				7621A12427FA093000452446 /* PersistenceMangager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		7621A12627FA148800452446 /* ItemInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				7621A12727FA14A500452446 /* ItemInfoVC.swift */,
+				7621A12B27FA18D700452446 /* AssetNameItemInfoVC.swift */,
+				7662EC1427FAABB8005B4596 /* AssetPriceItemInfoVC.swift */,
+			);
+			path = ItemInfoVC;
+			sourceTree = "<group>";
+		};
+		7621A12F27FA203300452446 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				767C5FF327ED8DD000BD5B39 /* CalculatorVC.swift */,
+			);
+			path = Calculator;
 			sourceTree = "<group>";
 		};
 		763DF3FE27CB2B9900D8F552 /* CustomViews */ = {
@@ -214,11 +251,10 @@
 			isa = PBXGroup;
 			children = (
 				7621A11D27FA034E00452446 /* Home */,
+				7621A12F27FA203300452446 /* Calculator */,
 				767C5FF127ED89C400BD5B39 /* OnboardingVC.swift */,
 				76EA7BCD27C0CCA9004A56C1 /* MainVC.swift */,
-				76E26DC527D6F306009B00E3 /* AssetModelInfoVC.swift */,
 				76289E9527CA3750009B70DD /* CalendarVC.swift */,
-				767C5FF327ED8DD000BD5B39 /* CalculatorVC.swift */,
 				7621A12027FA06F100452446 /* Setting */,
 			);
 			path = Controllers;
@@ -273,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				76BC92F727F2EAF900D763CB /* EmptyStateView.swift */,
+				7621A12927FA16DB00452446 /* ItemInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -352,6 +389,9 @@
 				76289E9C27CA3CC7009B70DD /* SnapKit */,
 				76289EA127CA454C009B70DD /* Toast */,
 				7627E44727F2146500A17FB0 /* SwiftSoup */,
+				7621A13127FA206400452446 /* Starscream */,
+				7621A13427FA207000452446 /* Alamofire */,
+				7621A13727FA207B00452446 /* ProgressHUD */,
 			);
 			productName = "NFT-Helper";
 			productReference = 76EA7BC627C0CCA9004A56C1 /* NFT-Helper.app */;
@@ -429,6 +469,9 @@
 				76289E9B27CA3CC7009B70DD /* XCRemoteSwiftPackageReference "SnapKit" */,
 				76289EA027CA454C009B70DD /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				7627E44627F2146500A17FB0 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				7621A13027FA206400452446 /* XCRemoteSwiftPackageReference "Starscream" */,
+				7621A13327FA207000452446 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7621A13627FA207B00452446 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 			);
 			productRefGroup = 76EA7BC727C0CCA9004A56C1 /* Products */;
 			projectDirPath = "";
@@ -484,11 +527,15 @@
 				763DF40727CB32A100D8F552 /* NetworkManager.swift in Sources */,
 				763DF40927CB33B900D8F552 /* URLSession+Ext.swift in Sources */,
 				76289EA627CA46C5009B70DD /* CustomDefaultStyleTitleLabel.swift in Sources */,
+				7621A12A27FA16DB00452446 /* ItemInfoView.swift in Sources */,
 				767C5FEE27ED895800BD5B39 /* OnboardingCollectionViewCell.swift in Sources */,
 				76289E9A27CA3B5F009B70DD /* CustomDefaultStyleTextField.swift in Sources */,
 				767C5FF027ED899600BD5B39 /* OnboardingSlides.swift in Sources */,
+				7621A12C27FA18D700452446 /* AssetNameItemInfoVC.swift in Sources */,
 				76EA7BCE27C0CCA9004A56C1 /* MainVC.swift in Sources */,
 				76289EA827CA47A2009B70DD /* CustomDefaultStyleBodyLabel.swift in Sources */,
+				7621A12827FA14A500452446 /* ItemInfoVC.swift in Sources */,
+				7621A12E27FA1E2800452446 /* AssetModelInfoHeaderVC.swift in Sources */,
 				767C5FF427ED8DD000BD5B39 /* CalculatorVC.swift in Sources */,
 				76289E9F27CA4203009B70DD /* NFTListVC.swift in Sources */,
 				767C5FFC27ED962D00BD5B39 /* UserDefaults+Ext.swift in Sources */,
@@ -504,6 +551,7 @@
 				763DF40B27CB351000D8F552 /* EndPoint.swift in Sources */,
 				76289EA427CA456C009B70DD /* UIViewController+Ext.swift in Sources */,
 				7621A12227FA073B00452446 /* AddressTableViewCell.swift in Sources */,
+				7662EC1527FAABB9005B4596 /* AssetPriceItemInfoVC.swift in Sources */,
 				76EA7BCC27C0CCA9004A56C1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -864,6 +912,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7621A13027FA206400452446 /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		7621A13327FA207000452446 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		7621A13627FA207B00452446 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		7627E44627F2146500A17FB0 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup";
@@ -891,6 +963,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7621A13127FA206400452446 /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7621A13027FA206400452446 /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+		7621A13427FA207000452446 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7621A13327FA207000452446 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		7621A13727FA207B00452446 /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7621A13627FA207B00452446 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
+		};
 		7627E44727F2146500A17FB0 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7627E44627F2146500A17FB0 /* XCRemoteSwiftPackageReference "SwiftSoup" */;

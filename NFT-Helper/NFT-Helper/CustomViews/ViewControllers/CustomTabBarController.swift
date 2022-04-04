@@ -26,7 +26,7 @@ class CustomTabBarController: UITabBarController {
         
         viewControllers = [createTabbarSubVC(viewcotroller: NFTListVC(), tabBarSubModel: homeModel),
                            createTabbarSubVC(viewcotroller: CalendarVC(), tabBarSubModel: calendarModel),
-                           createTabbarSubVC(viewcotroller: CalculatorVC(), tabBarSubModel: calculatorModel),
+                           createTabbarSubVC(viewcotroller: CalculatorVC(fp: 0), tabBarSubModel: calculatorModel),
                            createTabbarSubVC(viewcotroller: SettingVC(), tabBarSubModel: settingModel)]
         
         configureTabBar()

@@ -10,12 +10,13 @@ import Foundation
 struct AddressCollectionModel: Codable, Hashable {
     let id = UUID()
     let name: String
+    let stats: [String: Double]
     let externalURL: String?
     let imageURL: String?
     let slug: String
 
     enum CodingKeys: String, CodingKey {
-        case name
+        case name, stats
         case externalURL = "external_url"
         case imageURL = "image_url"
         case slug

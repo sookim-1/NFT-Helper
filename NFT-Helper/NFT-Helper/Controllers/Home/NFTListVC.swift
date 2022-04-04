@@ -158,7 +158,7 @@ final class NFTListVC: UIViewController {
                 guard let self = self else { return }
                 switch result {
                 case .success(let value):
-                    let addressCollection = AddressCollectionModel(name: value.collection.name, externalURL: value.collection.externalURL, imageURL: value.collection.imageURL, slug: i)
+                    let addressCollection = AddressCollectionModel(name: value.collection.name, stats: value.collection.stats, externalURL: value.collection.externalURL, imageURL: value.collection.imageURL, slug: i)
                     self.addressCollectionModels.append(addressCollection)
                     self.updateData(on: self.addressCollectionModels)
                 case .failure(let error):
@@ -218,7 +218,7 @@ extension NFTListVC: UICollectionViewDelegate {
         let addressCollectionModel = activeArray[indexPath.item]
         
         let destVC = AssetModelInfoVC()
-        destVC.assetModelName = addressCollectionModel.name
+        destVC.assetModelName = addressCollectionModel
         let navController = UINavigationController(rootViewController: destVC)
         present(navController, animated: true)
     }

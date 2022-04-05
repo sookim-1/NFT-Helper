@@ -16,7 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = createTabbarController()
+        let firstLaunch = FirstLaunch(userDefaults: .standard, key: "firstLaunchKey")
+        if firstLaunch.isFirstLaunch {
+            window?.rootViewController = OnboardingVC()
+        } else {
+            window?.rootViewController = CustomTabBarController()
+        }
+        
         window?.backgroundColor = .systemBackground
         window?.makeKeyAndVisible()
         
@@ -50,37 +56,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-    // MARK: - 탭바 설정
-    private func createMainNC() -> UINavigationController {
-        let mainVC = MainVC()
-        mainVC.title = "NFT 도우미"
-        mainVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
-        
-        return UINavigationController(rootViewController: mainVC)
-    }
-    
-    private func createSecondNC() -> UINavigationController {
-        let secondVC = SecondVC()
-        secondVC.title = "2번째 화면"
-        secondVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
-        
-        return UINavigationController(rootViewController: secondVC)
-    }
-    
-    private func createTabbarController() -> UITabBarController {
-        let tabbarController = UITabBarController()
-        UITabBar.appearance().tintColor = .systemGreen
-        UITabBar.appearance().backgroundColor = .systemGray6
-        tabbarController.viewControllers = [createMainNC(), createSecondNC()]
-        
-        return tabbarController
-    }
     
     // MARK: - 네비게이션바 설정
     private func configureNavigationBar() {
         UINavigationBar.appearance().tintColor = .systemGreen
         UINavigationBar.appearance().backgroundColor = .systemGray6
     }
+
 }
 

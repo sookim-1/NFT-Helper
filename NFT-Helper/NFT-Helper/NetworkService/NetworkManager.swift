@@ -28,4 +28,12 @@ final class NetworkManager {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         URLSession.request(endpoint: request, completion: completion)
     }
+    
+    func addCollection(url: URL, completion: @escaping (Result<Post, NetWorkErrorMessage>) -> Void) {
+        var request = URLRequest(url: url)
+
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        URLSession.request(endpoint: request, completion: completion)
+    }
 }

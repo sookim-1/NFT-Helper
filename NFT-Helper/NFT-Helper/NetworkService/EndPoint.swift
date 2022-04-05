@@ -8,17 +8,20 @@
 import Foundation
 
 enum Endpoint {
-    case collections(assetOwner: String, limit: Int)
+    case collections(assetOwner: String, offset: Int, limit: Int)
     case collectionStats(collectionSlug: String)
+    case kaikasCollection(slug: String)
 }
 
 extension Endpoint {
     var url: URL {
         switch self {
-        case .collections(let assetOwner, let limit):
-            return .makeForEndpoint("collections?asset_owner=\(assetOwner)&offset=0&limit=\(limit)")
+        case .collections(let assetOwner, let offset, let limit):
+            return .makeForEndpoint("collections?asset_owner=\(assetOwner)&offset=\(offset)&limit=\(limit)")
         case .collectionStats(let slug):
             return .makeForEndpoint("collection/\(slug)/stats")
+        case .kaikasCollection(let slug):
+            return .makeForEndpoint("collection/\(slug)")
         }
     }
 }

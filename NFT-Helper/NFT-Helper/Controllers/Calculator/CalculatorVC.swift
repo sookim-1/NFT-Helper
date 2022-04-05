@@ -123,6 +123,7 @@ class CalculatorVC: UIViewController, WebSocketDelegate {
         super.viewWillDisappear(animated)
 
         disconnect()
+        ProgressHUD.dismiss()
     }
 
     func configure() {
@@ -240,7 +241,7 @@ class CalculatorVC: UIViewController, WebSocketDelegate {
         case .connected(let headers):
             print(".connected - \(headers)")
 
-            let a = RequestBit(type: "ticker", symbols: ["ETH_KRW", "MATIC_KRW", "KLAY_KRW"], tickTypes: ["30M"])
+            let a = RequestBit(type: "ticker", symbols: ["ETH_KRW", "KLAY_KRW"], tickTypes: ["30M"])
             let jsonData = try! JSONEncoder().encode(a)
 
             print(jsonData) // 47 bytes

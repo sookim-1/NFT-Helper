@@ -38,6 +38,7 @@ final class CustomDefaultStyleTextField: UITextField {
         adjustsFontSizeToFitWidth = true
         minimumFontSize = 12
         
+        clearButtonMode = .whileEditing
         backgroundColor = .tertiarySystemBackground
         autocorrectionType = .no
         autocapitalizationType = .none

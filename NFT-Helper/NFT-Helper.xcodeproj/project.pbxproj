@@ -38,6 +38,7 @@
 		763DF41127CB3C4A00D8F552 /* AssetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF41027CB3C4A00D8F552 /* AssetsCollectionViewCell.swift */; };
 		763DF41327CB3D5E00D8F552 /* CustomAssetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF41227CB3D5E00D8F552 /* CustomAssetImageView.swift */; };
 		7662EC1527FAABB9005B4596 /* AssetPriceItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7662EC1427FAABB8005B4596 /* AssetPriceItemInfoVC.swift */; };
+		7662EC1827FABDC6005B4596 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7662EC1727FABDC6005B4596 /* IQKeyboardManagerSwift */; };
 		767C5FEE27ED895800BD5B39 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FED27ED895800BD5B39 /* OnboardingCollectionViewCell.swift */; };
 		767C5FF027ED899600BD5B39 /* OnboardingSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FEF27ED899600BD5B39 /* OnboardingSlides.swift */; };
 		767C5FF227ED89C400BD5B39 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FF127ED89C400BD5B39 /* OnboardingVC.swift */; };
@@ -130,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7662EC1827FABDC6005B4596 /* IQKeyboardManagerSwift in Frameworks */,
 				7621A13527FA207000452446 /* Alamofire in Frameworks */,
 				76289EA227CA454C009B70DD /* Toast in Frameworks */,
 				76289E9D27CA3CC7009B70DD /* SnapKit in Frameworks */,
@@ -392,6 +394,7 @@
 				7621A13127FA206400452446 /* Starscream */,
 				7621A13427FA207000452446 /* Alamofire */,
 				7621A13727FA207B00452446 /* ProgressHUD */,
+				7662EC1727FABDC6005B4596 /* IQKeyboardManagerSwift */,
 			);
 			productName = "NFT-Helper";
 			productReference = 76EA7BC627C0CCA9004A56C1 /* NFT-Helper.app */;
@@ -472,6 +475,7 @@
 				7621A13027FA206400452446 /* XCRemoteSwiftPackageReference "Starscream" */,
 				7621A13327FA207000452446 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				7621A13627FA207B00452446 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
+				7662EC1627FABDC6005B4596 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 76EA7BC727C0CCA9004A56C1 /* Products */;
 			projectDirPath = "";
@@ -722,16 +726,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 2MRY8P7863;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NFT-Helper/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "NFT-Helper";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "캘린더 앱 권한을 허용해주세요";
+				INFOPLIST_KEY_NSRemindersUsageDescription = "리마인더 앱 권한을 허용해주세요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -751,16 +758,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 2MRY8P7863;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NFT-Helper/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "NFT-Helper";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "캘린더 앱 권한을 허용해주세요";
+				INFOPLIST_KEY_NSRemindersUsageDescription = "리마인더 앱 권한을 허용해주세요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -960,6 +970,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		7662EC1627FABDC6005B4596 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -992,6 +1010,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 76289EA027CA454C009B70DD /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		};
+		7662EC1727FABDC6005B4596 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7662EC1627FABDC6005B4596 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -48,7 +48,7 @@ final class NFTListVC: UIViewController {
         kaikasGetAddressCollection(slugArray: slugArray)
         collectionView.reloadData()
     }
-
+    
     private func configureWalletAddress() {
         if UserDefaults.walletAddress != "" {
             walletAddress = UserDefaults.walletAddress
@@ -178,6 +178,9 @@ final class NFTListVC: UIViewController {
             self.showEmptyStateView(with: "NFT작품이 없어요😱", in: self.view)
             return
         }
+        let emptyView = view.viewWithTag(99)
+        emptyView?.removeFromSuperview()
+        
         guard let url = URL(string: "https://opensea.io/\(walletAddress)") else { return }
         
         do {

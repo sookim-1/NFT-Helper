@@ -25,7 +25,9 @@ class CustomTabBarController: UITabBarController {
         let settingModel = TabBarSubModel(title: "설정", image: UIImage(systemName: "person")!, selectedImage: UIImage(systemName: "person.fill")!, tag: 3)
         
         viewControllers = [createTabbarSubVC(viewcotroller: NFTListVC(), tabBarSubModel: homeModel),
-                           createTabbarSubVC(viewcotroller: CalendarVC(), tabBarSubModel: calendarModel),
+                           createTabbarSubVC(viewcotroller: CalendarVC(baseDate: Date(), selectedDateChanged: { date in
+            print("date")
+        }), tabBarSubModel: calendarModel),
                            createTabbarSubVC(viewcotroller: CalculatorVC(fp: 0), tabBarSubModel: calculatorModel),
                            createTabbarSubVC(viewcotroller: SettingVC(), tabBarSubModel: settingModel)]
         

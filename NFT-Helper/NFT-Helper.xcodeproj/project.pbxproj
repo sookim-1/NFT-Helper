@@ -30,6 +30,8 @@
 		76289EA627CA46C5009B70DD /* CustomDefaultStyleTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76289EA527CA46C5009B70DD /* CustomDefaultStyleTitleLabel.swift */; };
 		76289EA827CA47A2009B70DD /* CustomDefaultStyleBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76289EA727CA47A2009B70DD /* CustomDefaultStyleBodyLabel.swift */; };
 		76289EAA27CA484E009B70DD /* CustomDefaultStyleAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76289EA927CA484E009B70DD /* CustomDefaultStyleAlertVC.swift */; };
+		762D1991280320C50049DE2B /* CalendarFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D1990280320C50049DE2B /* CalendarFooterView.swift */; };
+		762D1993280320D30049DE2B /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D1992280320D30049DE2B /* CalendarHeaderView.swift */; };
 		763DF40427CB300800D8F552 /* OpenseaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF40327CB300800D8F552 /* OpenseaModel.swift */; };
 		763DF40727CB32A100D8F552 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF40627CB32A100D8F552 /* NetworkManager.swift */; };
 		763DF40927CB33B900D8F552 /* URLSession+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF40827CB33B900D8F552 /* URLSession+Ext.swift */; };
@@ -98,6 +100,8 @@
 		76289EA527CA46C5009B70DD /* CustomDefaultStyleTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDefaultStyleTitleLabel.swift; sourceTree = "<group>"; };
 		76289EA727CA47A2009B70DD /* CustomDefaultStyleBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDefaultStyleBodyLabel.swift; sourceTree = "<group>"; };
 		76289EA927CA484E009B70DD /* CustomDefaultStyleAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDefaultStyleAlertVC.swift; sourceTree = "<group>"; };
+		762D1990280320C50049DE2B /* CalendarFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarFooterView.swift; sourceTree = "<group>"; };
+		762D1992280320D30049DE2B /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		763DF40327CB300800D8F552 /* OpenseaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenseaModel.swift; sourceTree = "<group>"; };
 		763DF40627CB32A100D8F552 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		763DF40827CB33B900D8F552 /* URLSession+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Ext.swift"; sourceTree = "<group>"; };
@@ -220,6 +224,15 @@
 			path = Calculator;
 			sourceTree = "<group>";
 		};
+		762D198F280320B00049DE2B /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				762D1990280320C50049DE2B /* CalendarFooterView.swift */,
+				762D1992280320D30049DE2B /* CalendarHeaderView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		763DF3FE27CB2B9900D8F552 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +334,7 @@
 		76BC92F627F2EADE00D763CB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				762D198F280320B00049DE2B /* Calendar */,
 				76BC92F727F2EAF900D763CB /* EmptyStateView.swift */,
 				7621A12927FA16DB00452446 /* ItemInfoView.swift */,
 			);
@@ -544,6 +558,7 @@
 				7621A11C27FA019400452446 /* UIView+Ext.swift in Sources */,
 				767C5FF627ED8E1200BD5B39 /* SettingVC.swift in Sources */,
 				763DF40E27CB392A00D8F552 /* NetworkError.swift in Sources */,
+				762D1993280320D30049DE2B /* CalendarHeaderView.swift in Sources */,
 				76289E9827CA3A59009B70DD /* CustomDefaultStyleButton.swift in Sources */,
 				76289E9627CA3750009B70DD /* CalendarVC.swift in Sources */,
 				76BC92F827F2EAF900D763CB /* EmptyStateView.swift in Sources */,
@@ -570,6 +585,7 @@
 				763DF41327CB3D5E00D8F552 /* CustomAssetImageView.swift in Sources */,
 				76E26DC627D6F306009B00E3 /* AssetModelInfoVC.swift in Sources */,
 				763DF40427CB300800D8F552 /* OpenseaModel.swift in Sources */,
+				762D1991280320C50049DE2B /* CalendarFooterView.swift in Sources */,
 				767C5FF227ED89C400BD5B39 /* OnboardingVC.swift in Sources */,
 				763DF41127CB3C4A00D8F552 /* AssetsCollectionViewCell.swift in Sources */,
 				7621A11A27F9FC0900452446 /* CustomTabBarController.swift in Sources */,
@@ -750,7 +766,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 2MRY8P7863;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NFT-Helper/Info.plist";
@@ -782,7 +798,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 2MRY8P7863;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NFT-Helper/Info.plist";

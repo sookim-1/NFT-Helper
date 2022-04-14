@@ -30,11 +30,31 @@ class CalendarVC: UIViewController {
         return collectionView
     }()
     
+    private lazy var headerView = CalendarHeaderView { [weak self] in
+        guard let self = self else { return }
+        
+        self.dismiss(animated: true)
+    }
+    
+    private lazy var footerView = CalendarFooterView {
+        [weak self] in
+        guard let self = self else { return }
+        
+        self.baseDate = self.calendar.date(byAdding: .month, value: -1, to: self.baseDate) ?? self.baseDate
+    } didTapNextMonthCompletionHandler: {
+        [weak self] in
+        guard let self = self else { return }
+        
+        self.baseDate = self.calendar.date(byAdding: .month, value: 1, to: self.baseDate) ?? self.baseDate
+    }
+
+    
     private let selectedDate: Date
     private var baseDate: Date {
         didSet {
             days = generateDaysInMonth(for: baseDate)
             collectionView.reloadData()
+            headerView.baseDate = baseDate
         }
     }
     
@@ -90,8 +110,9 @@ class CalendarVC: UIViewController {
     func configureViewController() {
         view.backgroundColor = .systemBackground
         
-        view.addSubviews(dimmedBackgroundView, collectionView)
+        view.addSubviews(dimmedBackgroundView, collectionView, headerView, footerView)
         navigationController?.navigationBar.prefersLargeTitles = true
+        headerView.baseDate = baseDate
     }
     
     func configureCollectionView() {
@@ -111,6 +132,20 @@ class CalendarVC: UIViewController {
             make.right.equalTo(view.readableContentGuide)
             make.centerY.equalToSuperview().offset(10)
             make.height.equalToSuperview().multipliedBy(0.5)
+        }
+        
+        headerView.snp.makeConstraints { make in
+            make.left.equalTo(collectionView.snp.left)
+            make.right.equalTo(collectionView.snp.right)
+            make.bottom.equalTo(collectionView.snp.top)
+            make.height.equalTo(85)
+        }
+        
+        footerView.snp.makeConstraints { make in
+            make.left.equalTo(collectionView.snp.left)
+            make.right.equalTo(collectionView.snp.right)
+            make.top.equalTo(collectionView.snp.bottom)
+            make.height.equalTo(85)
         }
     }
     
@@ -200,6 +235,8 @@ extension CalendarVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let day = days[indexPath.row]
         selectedDateChanged(day.date)
+        print(day.date)
+        print(day)
         
         dismiss(animated: true)
     }

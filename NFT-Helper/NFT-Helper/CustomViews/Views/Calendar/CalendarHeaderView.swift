@@ -14,7 +14,8 @@ class CalendarHeaderView: UIView {
     lazy var monthLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 26, weight: .bold)
-        label.text = "Month"
+        label.textColor = .systemMint
+        label.text = "월"
         label.accessibilityTraits = .header
         label.isAccessibilityElement = true
         
@@ -32,7 +33,7 @@ class CalendarHeaderView: UIView {
         button.contentMode = .scaleAspectFill
         button.isUserInteractionEnabled = true
         button.isAccessibilityElement = true
-        button.accessibilityLabel = "Close Picker"
+        button.accessibilityLabel = "닫기"
         
         return button
     }()
@@ -105,19 +106,19 @@ class CalendarHeaderView: UIView {
     private func dayOfWeekLetter(for dayNumber: Int) -> String {
         switch dayNumber {
         case 1:
-            return "S"
+            return "일"
         case 2:
-            return "M"
+            return "월"
         case 3:
-            return "T"
+            return "화"
         case 4:
-            return "W"
+            return "수"
         case 5:
-            return "T"
+            return "목"
         case 6:
-            return "F"
+            return "금"
         case 7:
-            return "S"
+            return "토"
         default:
             return ""
         }

@@ -129,6 +129,7 @@ class CalculatorVC: UIViewController, WebSocketDelegate {
     func configure() {
         view.backgroundColor = .systemBackground
         view.addSubviews(ethPriceLabel, ethImageView, klayPriceLabel, klayImageView, calculatorButton, floorPriceLabel, customSegmentControl, priceTextField)
+        navigationController?.navigationBar.prefersLargeTitles = true
         calculatorButton.addTarget(self, action: #selector(getPrice), for: .touchUpInside)
     }
 

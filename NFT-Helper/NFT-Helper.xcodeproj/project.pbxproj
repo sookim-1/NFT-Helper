@@ -49,6 +49,15 @@
 		767C5FFA27ED91B800BD5B39 /* AddressRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FF927ED91B800BD5B39 /* AddressRegisterVC.swift */; };
 		767C5FFC27ED962D00BD5B39 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FFB27ED962D00BD5B39 /* UserDefaults+Ext.swift */; };
 		767C5FFF27EDA21900BD5B39 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FFE27EDA21900BD5B39 /* FirstLaunch.swift */; };
+		76A7FC312807D58E00392DBA /* CalendarListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7FC302807D58E00392DBA /* CalendarListTableVC.swift */; };
+		76A7FC352807D85200392DBA /* CalendarListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7FC342807D85200392DBA /* CalendarListTableViewCell.swift */; };
+		76A7FC3928081ED400392DBA /* MintMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7FC3828081ED400392DBA /* MintMetadata.swift */; };
+		76A7FC3C2808225F00392DBA /* NewMintItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7FC3B2808225F00392DBA /* NewMintItemVC.swift */; };
+		76A7FC3E2808245000392DBA /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7FC3D2808245000392DBA /* String+Ext.swift */; };
+		76A7FC4128082BC400392DBA /* DefaultTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7FC4028082BC300392DBA /* DefaultTextFieldTableViewCell.swift */; };
+		76A7FC4328082E2100392DBA /* ChainCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7FC4228082E2000392DBA /* ChainCategoryTableViewCell.swift */; };
+		76A7FC45280834A600392DBA /* DefaultSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7FC44280834A600392DBA /* DefaultSwitchTableViewCell.swift */; };
+		76A7FC47280836D900392DBA /* DefaultTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7FC46280836D900392DBA /* DefaultTimeTableViewCell.swift */; };
 		76BC92F827F2EAF900D763CB /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BC92F727F2EAF900D763CB /* EmptyStateView.swift */; };
 		76E26DC627D6F306009B00E3 /* AssetModelInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E26DC527D6F306009B00E3 /* AssetModelInfoVC.swift */; };
 		76EA7BCA27C0CCA9004A56C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */; };
@@ -118,6 +127,15 @@
 		767C5FF927ED91B800BD5B39 /* AddressRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRegisterVC.swift; sourceTree = "<group>"; };
 		767C5FFB27ED962D00BD5B39 /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
 		767C5FFE27EDA21900BD5B39 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
+		76A7FC302807D58E00392DBA /* CalendarListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarListTableVC.swift; sourceTree = "<group>"; };
+		76A7FC342807D85200392DBA /* CalendarListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarListTableViewCell.swift; sourceTree = "<group>"; };
+		76A7FC3828081ED400392DBA /* MintMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MintMetadata.swift; sourceTree = "<group>"; };
+		76A7FC3B2808225F00392DBA /* NewMintItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMintItemVC.swift; sourceTree = "<group>"; };
+		76A7FC3D2808245000392DBA /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		76A7FC4028082BC300392DBA /* DefaultTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		76A7FC4228082E2000392DBA /* ChainCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		76A7FC44280834A600392DBA /* DefaultSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSwitchTableViewCell.swift; sourceTree = "<group>"; };
+		76A7FC46280836D900392DBA /* DefaultTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTimeTableViewCell.swift; sourceTree = "<group>"; };
 		76BC92F727F2EAF900D763CB /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		76E26DC527D6F306009B00E3 /* AssetModelInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModelInfoVC.swift; sourceTree = "<group>"; };
 		76EA7BC627C0CCA9004A56C1 /* NFT-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NFT-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,6 +273,7 @@
 				763DF40827CB33B900D8F552 /* URLSession+Ext.swift */,
 				767C5FFB27ED962D00BD5B39 /* UserDefaults+Ext.swift */,
 				7621A11B27FA019400452446 /* UIView+Ext.swift */,
+				76A7FC3D2808245000392DBA /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -273,11 +292,11 @@
 		763DF40127CB2BD000D8F552 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				76A7FC2F2807D56B00392DBA /* Calendar */,
 				7621A11D27FA034E00452446 /* Home */,
 				7621A12F27FA203300452446 /* Calculator */,
 				767C5FF127ED89C400BD5B39 /* OnboardingVC.swift */,
 				76EA7BCD27C0CCA9004A56C1 /* MainVC.swift */,
-				76289E9527CA3750009B70DD /* CalendarVC.swift */,
 				7621A12027FA06F100452446 /* Setting */,
 			);
 			path = Controllers;
@@ -315,10 +334,12 @@
 		763DF40F27CB3C1500D8F552 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				76A7FC3F28082AA300392DBA /* MintStaticCustomCells */,
 				763DF41027CB3C4A00D8F552 /* AssetsCollectionViewCell.swift */,
 				767C5FED27ED895800BD5B39 /* OnboardingCollectionViewCell.swift */,
 				7621A12127FA073B00452446 /* AddressTableViewCell.swift */,
 				76F4D34628008B1D00C80875 /* CalendarDateCollectionViewCell.swift */,
+				76A7FC342807D85200392DBA /* CalendarListTableViewCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -329,6 +350,27 @@
 				767C5FFE27EDA21900BD5B39 /* FirstLaunch.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		76A7FC2F2807D56B00392DBA /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				76A7FC302807D58E00392DBA /* CalendarListTableVC.swift */,
+				76A7FC3B2808225F00392DBA /* NewMintItemVC.swift */,
+				76289E9527CA3750009B70DD /* CalendarVC.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		76A7FC3F28082AA300392DBA /* MintStaticCustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				76A7FC4028082BC300392DBA /* DefaultTextFieldTableViewCell.swift */,
+				76A7FC4228082E2000392DBA /* ChainCategoryTableViewCell.swift */,
+				76A7FC44280834A600392DBA /* DefaultSwitchTableViewCell.swift */,
+				76A7FC46280836D900392DBA /* DefaultTimeTableViewCell.swift */,
+			);
+			path = MintStaticCustomCells;
 			sourceTree = "<group>";
 		};
 		76BC92F627F2EADE00D763CB /* Views */ = {
@@ -401,6 +443,7 @@
 			children = (
 				76F4D33F28007BFE00C80875 /* Day.swift */,
 				76F4D34128007DEA00C80875 /* MonthMetadata.swift */,
+				76A7FC3828081ED400392DBA /* MintMetadata.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -556,6 +599,7 @@
 				767C5FFA27ED91B800BD5B39 /* AddressRegisterVC.swift in Sources */,
 				76289EAA27CA484E009B70DD /* CustomDefaultStyleAlertVC.swift in Sources */,
 				7621A11C27FA019400452446 /* UIView+Ext.swift in Sources */,
+				76A7FC3E2808245000392DBA /* String+Ext.swift in Sources */,
 				767C5FF627ED8E1200BD5B39 /* SettingVC.swift in Sources */,
 				763DF40E27CB392A00D8F552 /* NetworkError.swift in Sources */,
 				762D1993280320D30049DE2B /* CalendarHeaderView.swift in Sources */,
@@ -567,6 +611,9 @@
 				763DF40927CB33B900D8F552 /* URLSession+Ext.swift in Sources */,
 				76289EA627CA46C5009B70DD /* CustomDefaultStyleTitleLabel.swift in Sources */,
 				7621A12A27FA16DB00452446 /* ItemInfoView.swift in Sources */,
+				76A7FC4328082E2100392DBA /* ChainCategoryTableViewCell.swift in Sources */,
+				76A7FC4128082BC400392DBA /* DefaultTextFieldTableViewCell.swift in Sources */,
+				76A7FC3928081ED400392DBA /* MintMetadata.swift in Sources */,
 				767C5FEE27ED895800BD5B39 /* OnboardingCollectionViewCell.swift in Sources */,
 				76289E9A27CA3B5F009B70DD /* CustomDefaultStyleTextField.swift in Sources */,
 				767C5FF027ED899600BD5B39 /* OnboardingSlides.swift in Sources */,
@@ -580,11 +627,14 @@
 				76289E9F27CA4203009B70DD /* NFTListVC.swift in Sources */,
 				767C5FFC27ED962D00BD5B39 /* UserDefaults+Ext.swift in Sources */,
 				76EA7BCA27C0CCA9004A56C1 /* AppDelegate.swift in Sources */,
+				76A7FC45280834A600392DBA /* DefaultSwitchTableViewCell.swift in Sources */,
 				76F4D34528007EA400C80875 /* CalendarDataError.swift in Sources */,
+				76A7FC3C2808225F00392DBA /* NewMintItemVC.swift in Sources */,
 				7621A11F27FA06CD00452446 /* WalletAddress.swift in Sources */,
 				763DF41327CB3D5E00D8F552 /* CustomAssetImageView.swift in Sources */,
 				76E26DC627D6F306009B00E3 /* AssetModelInfoVC.swift in Sources */,
 				763DF40427CB300800D8F552 /* OpenseaModel.swift in Sources */,
+				76A7FC352807D85200392DBA /* CalendarListTableViewCell.swift in Sources */,
 				762D1991280320C50049DE2B /* CalendarFooterView.swift in Sources */,
 				767C5FF227ED89C400BD5B39 /* OnboardingVC.swift in Sources */,
 				763DF41127CB3C4A00D8F552 /* AssetsCollectionViewCell.swift in Sources */,
@@ -595,8 +645,10 @@
 				76289EA427CA456C009B70DD /* UIViewController+Ext.swift in Sources */,
 				7621A12227FA073B00452446 /* AddressTableViewCell.swift in Sources */,
 				7662EC1527FAABB9005B4596 /* AssetPriceItemInfoVC.swift in Sources */,
+				76A7FC47280836D900392DBA /* DefaultTimeTableViewCell.swift in Sources */,
 				76F4D34728008B1D00C80875 /* CalendarDateCollectionViewCell.swift in Sources */,
 				76EA7BCC27C0CCA9004A56C1 /* SceneDelegate.swift in Sources */,
+				76A7FC312807D58E00392DBA /* CalendarListTableVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

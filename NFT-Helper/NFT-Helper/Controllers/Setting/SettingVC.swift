@@ -28,6 +28,7 @@ class SettingVC: UIViewController {
     func configureViewController() {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         navigationItem.rightBarButtonItem = addButton
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     @objc func addButtonTapped() {

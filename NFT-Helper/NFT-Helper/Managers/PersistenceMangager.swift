@@ -16,6 +16,7 @@ enum PersistenceManager {
     
     enum Keys {
         static let addressList = "addressList"
+        static let calendarList = "calendarList"
     }
     
     static func updateWith(addressModel: WalletAddress, actionType: PersistenceActionType, completed: @escaping (Error?) -> Void) {
@@ -62,6 +63,58 @@ enum PersistenceManager {
             let encoder = JSONEncoder()
             let encodedAddressList = try encoder.encode(addressList)
             defaults.set(encodedAddressList, forKey: Keys.addressList)
+            return nil
+        } catch {
+            return error
+        }
+    }
+}
+
+extension PersistenceManager {
+    static func updateWithCalendarItem(calendarItem: MintMetadata, actionType: PersistenceActionType, completed: @escaping (Error?) -> Void) {
+        retrieveCalendarItem { result in
+            switch result {
+            case .success(var value):
+                
+                switch actionType {
+                case .add:
+                    guard !value.contains(calendarItem) else {
+                        completed(.none)
+                        return
+                    }
+                    
+                    value.append(calendarItem)
+                case .remove:
+                    value.removeAll { $0.name == calendarItem.name }
+                }
+                
+                completed(saveCalendarItem(calendarList: value))
+            case .failure(let error):
+                completed(error)
+            }
+        }
+    }
+    
+    static func retrieveCalendarItem(completed: @escaping (Result<[MintMetadata], Error>) -> Void) {
+        guard let itemData = defaults.object(forKey: Keys.calendarList) as? Data else {
+            completed(.success([]))
+            return
+        }
+        
+        do {
+            let decoder = JSONDecoder()
+            let calendarList = try decoder.decode([MintMetadata].self, from: itemData)
+            completed(.success(calendarList))
+        } catch {
+            completed(.failure(error))
+        }
+    }
+    
+    static func saveCalendarItem(calendarList: [MintMetadata]) -> Error? {
+        do {
+            let encoder = JSONEncoder()
+            let encodedCalendarList = try encoder.encode(calendarList)
+            defaults.set(encodedCalendarList, forKey: Keys.calendarList)
             return nil
         } catch {
             return error

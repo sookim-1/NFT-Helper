@@ -20,6 +20,8 @@ class NewMintItemVC: UIViewController {
     }()
     
     var mintdata: MintMetadata = MintMetadata(name: "", chainName: .none, price: 0, isWhiteList: false, mintDate: Date(), mintTime: Date())
+    var isEditItem: Bool = false
+    var index: Int = 1
     
     init(mintdata: MintMetadata?) {
         super.init(nibName: nil, bundle: nil)
@@ -27,7 +29,10 @@ class NewMintItemVC: UIViewController {
         if let mintdata = mintdata {
             self.mintdata = mintdata
             title = "일정 수정"
-            print("초기화 \(self.mintdata)")
+            self.isEditItem = true
+            print("초기화 \(self.mintdata), index: \(index)")
+        } else {
+            title = "일정 추가"
         }
     }
     
@@ -45,7 +50,6 @@ class NewMintItemVC: UIViewController {
     
     func configureViewController() {
         view.backgroundColor = .systemBackground
-        title = "일정 추가"
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTabDone))
         navigationItem.rightBarButtonItem = doneButton
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissVC))
@@ -72,10 +76,18 @@ class NewMintItemVC: UIViewController {
     
     @objc func didTabDone() {
         if mintdata.name != "" {
-            let data = ["metadata" : mintdata]
             
             print("Done: \(mintdata)")
-            NotificationCenter.default.post(name: Notification.Name("didRecieveNotification"), object: nil, userInfo: data)
+            if isEditItem {
+                let data = ["metadata" : mintdata, "isEdit" : true, "indexPath" : index] as [String : Any]
+                
+                NotificationCenter.default.post(name: Notification.Name("didRecieveNotification"), object: nil, userInfo: data)
+            } else {
+                let data = ["metadata" : mintdata, "isEdit" : false, "indexPath" : index] as [String : Any]
+                
+                NotificationCenter.default.post(name: Notification.Name("didRecieveNotification"), object: nil, userInfo: data)
+            }
+            dismiss(animated: true)
         } else {
             self.presentDefaultStyleAlertVC(title: "이름 입력", body: "이름을 입력해주세요", buttonTitle: "확인")
         }
@@ -112,7 +124,7 @@ extension NewMintItemVC: UITableViewDataSource, UITableViewDelegate {
             cell.delegate = self
             
             print(mintdata.chainName)
-            if mintdata.name != "" {
+            if isEditItem {
                 switch mintdata.chainName {
                 case .eth:
                     cell.ethButton.configuration?.baseBackgroundColor = .systemPurple.withAlphaComponent(0.7)
@@ -130,7 +142,7 @@ extension NewMintItemVC: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DefaultTextFieldTableViewCell.reuseIdentifier, for: indexPath) as? DefaultTextFieldTableViewCell
             else { return UITableViewCell() }
             
-            if mintdata.name != "" {
+            if isEditItem {
                 cell.textField.text = "\(mintdata.price)"
             }
             cell.setUpText(labelText: "가격", placeholder: "가격을 입력해주세요")
@@ -142,7 +154,9 @@ extension NewMintItemVC: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DefaultSwitchTableViewCell.reuseIdentifier, for: indexPath) as? DefaultSwitchTableViewCell
             else { return UITableViewCell() }
             
-            cell.isWhiteListSwitch.isOn = mintdata.isWhiteList
+            if isEditItem {
+                cell.isWhiteListSwitch.isOn = mintdata.isWhiteList
+            }
             cell.label.text = "화이트리스트 여부"
             cell.isWhiteListSwitch.addTarget(self, action: #selector(self.didChangedSwitch(_:)), for: .valueChanged)
             
@@ -233,9 +247,9 @@ extension NewMintItemVC: ChainCategoryDelegate {
     }
     
     @objc func onDidChangeDate(sender: UIDatePicker) {
-        let dateFormatter: DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "a hh:mm"
-        let selectedDate: String = dateFormatter.string(from: sender.date)
+//        let dateFormatter: DateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "a hh:mm"
+//        let selectedDate: String = dateFormatter.string(from: sender.date)
         self.mintdata.mintTime = sender.date
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 enum PersistenceActionType {
-    case add, remove
+    case add, remove, edit
 }
 
 enum PersistenceManager {
@@ -34,6 +34,14 @@ enum PersistenceManager {
                     value.append(addressModel)
                 case .remove:
                     value.removeAll { $0.address == addressModel.address }
+                case .edit:
+                    value.removeAll { $0.address == addressModel.address }
+                    guard !value.contains(addressModel) else {
+                        completed(.none)
+                        return
+                    }
+                    
+                    value.append(addressModel)
                 }
                 
                 completed(save(addressList: value))
@@ -86,9 +94,17 @@ extension PersistenceManager {
                     value.append(calendarItem)
                 case .remove:
                     value.removeAll { $0.name == calendarItem.name }
+                case .edit:
+                    value.removeAll { $0.name == calendarItem.name }
+                    guard !value.contains(calendarItem) else {
+                        completed(.none)
+                        return
+                    }
+                    value.append(calendarItem)
                 }
                 
                 completed(saveCalendarItem(calendarList: value))
+                
             case .failure(let error):
                 completed(error)
             }

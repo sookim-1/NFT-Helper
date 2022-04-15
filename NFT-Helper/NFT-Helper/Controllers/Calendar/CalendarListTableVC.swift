@@ -90,11 +90,21 @@ class CalendarListTableVC: UITableViewController {
         guard let receiveData = notification.userInfo else { return }
         
         guard let metadata: MintMetadata = receiveData["metadata"] as? MintMetadata else { return }
-   
+        guard let isEdit: Bool = receiveData["isEdit"] as? Bool else { return }
+        guard let indexNum: Int = receiveData["indexPath"] as? Int else { return }
         print("Notfication 데이터: \(metadata)")
-        self.items.append(metadata)
-        PersistenceManager.updateWithCalendarItem(calendarItem: metadata, actionType: .add) { error in
-            print(error)
+        
+        print(indexNum)
+        if isEdit {
+            self.items[indexNum] = metadata
+            PersistenceManager.updateWithCalendarItem(calendarItem: metadata, actionType: .edit) { error in
+                print(error)
+            }
+        } else {
+            self.items.append(metadata)
+            PersistenceManager.updateWithCalendarItem(calendarItem: metadata, actionType: .add) { error in
+                print(error)
+            }
         }
         self.applySnapshot()
     }
@@ -130,9 +140,11 @@ extension CalendarListTableVC {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(NewMintItemVC(mintdata: items[indexPath.row]), animated: true)
+        let destVC = NewMintItemVC(mintdata: items[indexPath.row])
+        destVC.index = indexPath.row
+        let navController = UINavigationController(rootViewController: destVC)
+        present(navController, animated: true)
     }
-    
     
     override func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
         let configuration = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { [weak self] _ in

@@ -56,7 +56,7 @@ class CalendarHeaderView: UIView {
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar(identifier: .gregorian)
         dateFormatter.locale = Locale.autoupdatingCurrent
-        dateFormatter.setLocalizedDateFormatFromTemplate("MMMM y")
+        dateFormatter.setLocalizedDateFormatFromTemplate("MM y")
         
         return dateFormatter
     }()

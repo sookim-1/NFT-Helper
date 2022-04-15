@@ -49,6 +49,7 @@
 		767C5FFA27ED91B800BD5B39 /* AddressRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FF927ED91B800BD5B39 /* AddressRegisterVC.swift */; };
 		767C5FFC27ED962D00BD5B39 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FFB27ED962D00BD5B39 /* UserDefaults+Ext.swift */; };
 		767C5FFF27EDA21900BD5B39 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FFE27EDA21900BD5B39 /* FirstLaunch.swift */; };
+		76A781B22809899200DAFBD3 /* CoinPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A781B12809899200DAFBD3 /* CoinPrice.swift */; };
 		76A7FC312807D58E00392DBA /* CalendarListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7FC302807D58E00392DBA /* CalendarListTableVC.swift */; };
 		76A7FC352807D85200392DBA /* CalendarListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7FC342807D85200392DBA /* CalendarListTableViewCell.swift */; };
 		76A7FC3928081ED400392DBA /* MintMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7FC3828081ED400392DBA /* MintMetadata.swift */; };
@@ -127,6 +128,7 @@
 		767C5FF927ED91B800BD5B39 /* AddressRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRegisterVC.swift; sourceTree = "<group>"; };
 		767C5FFB27ED962D00BD5B39 /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
 		767C5FFE27EDA21900BD5B39 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
+		76A781B12809899200DAFBD3 /* CoinPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPrice.swift; sourceTree = "<group>"; };
 		76A7FC302807D58E00392DBA /* CalendarListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarListTableVC.swift; sourceTree = "<group>"; };
 		76A7FC342807D85200392DBA /* CalendarListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarListTableViewCell.swift; sourceTree = "<group>"; };
 		76A7FC3828081ED400392DBA /* MintMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MintMetadata.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				763DF40327CB300800D8F552 /* OpenseaModel.swift */,
 				767C5FEF27ED899600BD5B39 /* OnboardingSlides.swift */,
 				7621A11E27FA06CD00452446 /* WalletAddress.swift */,
+				76A781B12809899200DAFBD3 /* CoinPrice.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 		76EA7BC827C0CCA9004A56C1 /* NFT-Helper */ = {
 			isa = PBXGroup;
 			children = (
+				763DF40527CB328900D8F552 /* NetworkService */,
 				7621A12327FA092300452446 /* Managers */,
 				763DF40227CB2FF100D8F552 /* Models */,
 				763DF40127CB2BD000D8F552 /* Controllers */,
@@ -413,7 +417,6 @@
 				763DF3FE27CB2B9900D8F552 /* CustomViews */,
 				763DF40027CB2BBC00D8F552 /* Supports */,
 				763DF40F27CB3C1500D8F552 /* CustomCells */,
-				763DF40527CB328900D8F552 /* NetworkService */,
 				763DF40C27CB391B00D8F552 /* Errors */,
 				767C5FFD27EDA20500BD5B39 /* Helper */,
 				76EA7BD727C0CCAC004A56C1 /* Info.plist */,
@@ -612,6 +615,7 @@
 				76289EA627CA46C5009B70DD /* CustomDefaultStyleTitleLabel.swift in Sources */,
 				7621A12A27FA16DB00452446 /* ItemInfoView.swift in Sources */,
 				76A7FC4328082E2100392DBA /* ChainCategoryTableViewCell.swift in Sources */,
+				76A781B22809899200DAFBD3 /* CoinPrice.swift in Sources */,
 				76A7FC4128082BC400392DBA /* DefaultTextFieldTableViewCell.swift in Sources */,
 				76A7FC3928081ED400392DBA /* MintMetadata.swift in Sources */,
 				767C5FEE27ED895800BD5B39 /* OnboardingCollectionViewCell.swift in Sources */,

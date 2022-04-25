@@ -176,6 +176,16 @@ final class NFTListVC: UIViewController {
     private func kaikasGetAddressCollection(slugArray: [String], completion: @escaping (Int) -> Void) {
         showLoadingView()
         
+        if slugArray.isEmpty && !UserDefaults.isEmptyWalletAddress! {
+            self.showEmptyStateView(with: "NFT작품이 없어요😱", in: self.view)
+            self.dismissLoadingView()
+            
+            return
+        }
+        
+        let emptyView = view.viewWithTag(199)
+        emptyView?.removeFromSuperview()
+        
         let setResult: Set<String> = Set(slugArray)
         let arrayResult = Array(setResult)
         slugArrayCount = arrayResult.count
@@ -237,9 +247,13 @@ final class NFTListVC: UIViewController {
     private func scrappingWalletAddress() {
         
         guard let walletAddress = walletAddress else {
-            self.showEmptyStateView(with: "NFT작품이 없어요😱", in: self.view)
+            self.showEmptyStateView(with: "지갑주소를 등록해주세요😱", in: self.view)
+            self.dismissLoadingView()
+            UserDefaults.isEmptyWalletAddress = true
+            
             return
         }
+        
         let emptyView = view.viewWithTag(99)
         emptyView?.removeFromSuperview()
         

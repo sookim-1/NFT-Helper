@@ -86,6 +86,8 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UserDefaults.walletAddress = walletAddressList[indexPath.row].address
+        UserDefaults.isEmptyWalletAddress = false
+        
         tabBarController?.selectedIndex = 0
     }
     

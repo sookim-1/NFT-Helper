@@ -26,4 +26,7 @@ struct UserDefault<T> {
 extension UserDefaults {
     @UserDefault(key: "walletAddress", defaultValue: "")
     static var walletAddress: String?
+    
+    @UserDefault(key: "isEmptyWalletAddress", defaultValue: false)
+    static var isEmptyWalletAddress: Bool?
 }

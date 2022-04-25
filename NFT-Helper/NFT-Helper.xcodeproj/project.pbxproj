@@ -40,6 +40,7 @@
 		763DF41127CB3C4A00D8F552 /* AssetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF41027CB3C4A00D8F552 /* AssetsCollectionViewCell.swift */; };
 		763DF41327CB3D5E00D8F552 /* CustomAssetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF41227CB3D5E00D8F552 /* CustomAssetImageView.swift */; };
 		765C386F2816F885006C785C /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765C386E2816F885006C785C /* UIImage+Ext.swift */; };
+		765C38742817028D006C785C /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765C38732817028D006C785C /* APIKey.swift */; };
 		7662EC1527FAABB9005B4596 /* AssetPriceItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7662EC1427FAABB8005B4596 /* AssetPriceItemInfoVC.swift */; };
 		7662EC1827FABDC6005B4596 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7662EC1727FABDC6005B4596 /* IQKeyboardManagerSwift */; };
 		767C5FEE27ED895800BD5B39 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FED27ED895800BD5B39 /* OnboardingCollectionViewCell.swift */; };
@@ -121,6 +122,7 @@
 		763DF41027CB3C4A00D8F552 /* AssetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsCollectionViewCell.swift; sourceTree = "<group>"; };
 		763DF41227CB3D5E00D8F552 /* CustomAssetImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAssetImageView.swift; sourceTree = "<group>"; };
 		765C386E2816F885006C785C /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		765C38732817028D006C785C /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		7662EC1427FAABB8005B4596 /* AssetPriceItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetPriceItemInfoVC.swift; sourceTree = "<group>"; };
 		767C5FED27ED895800BD5B39 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		767C5FEF27ED899600BD5B39 /* OnboardingSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlides.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 			children = (
 				763DF40627CB32A100D8F552 /* NetworkManager.swift */,
 				763DF40A27CB351000D8F552 /* EndPoint.swift */,
+				765C38732817028D006C785C /* APIKey.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				763DF40B27CB351000D8F552 /* EndPoint.swift in Sources */,
 				76289EA427CA456C009B70DD /* UIViewController+Ext.swift in Sources */,
 				7621A12227FA073B00452446 /* AddressTableViewCell.swift in Sources */,
+				765C38742817028D006C785C /* APIKey.swift in Sources */,
 				7662EC1527FAABB9005B4596 /* AssetPriceItemInfoVC.swift in Sources */,
 				76A7FC47280836D900392DBA /* DefaultTimeTableViewCell.swift in Sources */,
 				76F4D34728008B1D00C80875 /* CalendarDateCollectionViewCell.swift in Sources */,

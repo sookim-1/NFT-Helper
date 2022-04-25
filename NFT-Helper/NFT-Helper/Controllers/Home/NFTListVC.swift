@@ -46,6 +46,10 @@ final class NFTListVC: UIViewController {
         configureWalletAddress()
         scrappingWalletAddress()
         kaikasGetAddressCollection(slugArray: slugArray)
+
+        //callURL(text: str)
+        
+        
         collectionView.reloadData()
     }
     
@@ -153,21 +157,56 @@ final class NFTListVC: UIViewController {
         
         print("\(arrayResult)")
         
-        for i in arrayResult {
-            NetworkManager.shared.addCollection(url: Endpoint.kaikasCollection(slug: i).url) { [weak self] result in
+        for i in 0..<arrayResult.count {
+            NetworkManager.shared.addCollection(url: Endpoint.kaikasCollection(slug: arrayResult[i]).url) { [weak self] result in
                 guard let self = self else { return }
                 switch result {
                 case .success(let value):
-                    let addressCollection = AddressCollectionModel(name: value.collection.name, stats: value.collection.stats, externalURL: value.collection.externalURL, imageURL: value.collection.imageURL, slug: i)
+                    let addressCollection = AddressCollectionModel(name: value.collection.name, stats: value.collection.stats, externalURL: value.collection.externalURL, imageURL: value.collection.imageURL, slug: arrayResult[i])
                     self.addressCollectionModels.append(addressCollection)
+                    print("이름 :\(addressCollection.name)")
                     self.updateData(on: self.addressCollectionModels)
+                    
+                    print(i)
+                    print(arrayResult.count)
+                    if i == arrayResult.count - 1 {
+                        
+                        self.callURL(text: self.stringConvert()) { result in
+                            switch result {
+                            case .success(let callToData):
+                                var result = callToData.message.result.translatedText.components(separatedBy: "@")
+                                result.removeLast()
+                                for index in 0..<self.addressCollectionModels.count {
+                                    self.addressCollectionModels[index].name = result[index]
+                                }
+                                self.updateData(on: self.addressCollectionModels)
+                                self.dismissLoadingView()
+                            case .failure(let error):
+                                self.presentDefaultStyleAlertVC(title: "에러", body: error.rawValue, buttonTitle: "확인")
+                            }
+                        }
+                    }
                 case .failure(let error):
                     self.presentDefaultStyleAlertVC(title: "에러", body: error.rawValue, buttonTitle: "확인")
                 }
             }
         }
         
-        dismissLoadingView()
+    }
+    
+    func stringConvert() -> String {
+        var str = ""
+        
+        for i in 0..<addressCollectionModels.count {
+            addressCollectionModels[i].name = addressCollectionModels[i].name.replacingOccurrences(of: " ", with: "")
+        }
+        
+        for i in 0..<addressCollectionModels.count {
+            str.append(addressCollectionModels[i].name)
+            str.append("@")
+        }
+        
+        return str
     }
     
     
@@ -200,6 +239,20 @@ final class NFTListVC: UIViewController {
        }
     }
     
+    
+    func callURL(text: String, completion: @escaping (Result<PaPagoModel, NetWorkErrorMessage>) -> Void) {
+        let param = "source=en&target=ko&text=\(text)"
+        let paramData = param.data(using: .utf8)
+    
+        var request = URLRequest(url: URL(string: PaPagoAPIKey.papagoURLString)!)
+        request.httpMethod = "POST"
+        request.addValue(PaPagoAPIKey.ClientID, forHTTPHeaderField: "X-Naver-Client-Id")
+        request.addValue(PaPagoAPIKey.ClientSecret, forHTTPHeaderField: "X-Naver-Client-Secret")
+        request.httpBody = paramData
+        request.setValue(String(paramData!.count), forHTTPHeaderField: "Content-Length")
+        
+        URLSession.request(endpoint: request, completion: completion)
+    }
 }
 
 extension NFTListVC: UICollectionViewDelegate {
@@ -240,4 +293,20 @@ extension NFTListVC: UISearchResultsUpdating, UISearchBarDelegate {
         updateData(on: addressCollectionModels)
     }
 
+}
+
+
+// MARK: - Post
+struct PaPagoModel: Codable {
+    let message: Message
+}
+
+// MARK: - Message
+struct Message: Codable {
+    let result: TranslateResult
+}
+
+// MARK: - Result
+struct TranslateResult: Codable {
+    let translatedText: String
 }

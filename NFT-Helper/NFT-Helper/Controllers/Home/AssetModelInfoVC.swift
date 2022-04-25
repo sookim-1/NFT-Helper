@@ -25,6 +25,7 @@ final class AssetModelInfoVC: UIViewController {
         super.viewDidLoad()
 
         configureViewController()
+        configureScrollView()
         configureUIElements(with: assetModelName)
         setUpLayout()
     }
@@ -47,7 +48,7 @@ final class AssetModelInfoVC: UIViewController {
         
         contentView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
-            make.height.equalTo(600)
+            make.height.equalTo(700)
             make.width.equalTo(scrollView.snp.width)
         }
     }
@@ -76,16 +77,16 @@ final class AssetModelInfoVC: UIViewController {
         itemViews = [headerView, itemViewOne, itemViewTwo]
         
         for itemView in itemViews {
-            view.addSubview(itemView)
+            contentView.addSubview(itemView)
             
             itemView.snp.makeConstraints { make in
-                make.leading.equalToSuperview().offset(padding)
-                make.trailing.equalToSuperview().offset(-padding)
+                make.left.equalToSuperview().offset(padding)
+                make.right.equalToSuperview().offset(-padding)
             }
         }
         
         headerView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalToSuperview()
             make.height.equalTo(180)
             make.width.equalTo(headerView.snp.height)
         }

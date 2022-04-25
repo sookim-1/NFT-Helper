@@ -30,13 +30,23 @@ final class AssetsCollectionViewCell: UICollectionViewCell {
 
     func set(asset: AddressCollectionModel) {
         assetNameLabel.text = asset.name
-        assetImageView.downloadImage(from: asset.imageURL)
+//        assetImageView.downloadImage(from: asset.imageURL)
+        assetImageView.image = asset.name.textToImage(imgSize: CGSize(width: 60, height: 60))?.imageWithColor(color: getRandomColor())
     }
 
     private func configure() {
         addSubview(assetImageView)
         addSubview(assetNameLabel)
     }
+    
+    func getRandomColor() -> UIColor {
+        let randomRed:CGFloat = CGFloat(drand48())
+        let randomGreen:CGFloat = CGFloat(drand48())
+        let randomBlue:CGFloat = CGFloat(drand48())
+    
+        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+    }
+
     
     private func setUpLayout() {
         contentView.snp.makeConstraints { make in

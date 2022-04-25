@@ -39,6 +39,7 @@
 		763DF40E27CB392A00D8F552 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF40D27CB392A00D8F552 /* NetworkError.swift */; };
 		763DF41127CB3C4A00D8F552 /* AssetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF41027CB3C4A00D8F552 /* AssetsCollectionViewCell.swift */; };
 		763DF41327CB3D5E00D8F552 /* CustomAssetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DF41227CB3D5E00D8F552 /* CustomAssetImageView.swift */; };
+		765C386F2816F885006C785C /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765C386E2816F885006C785C /* UIImage+Ext.swift */; };
 		7662EC1527FAABB9005B4596 /* AssetPriceItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7662EC1427FAABB8005B4596 /* AssetPriceItemInfoVC.swift */; };
 		7662EC1827FABDC6005B4596 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7662EC1727FABDC6005B4596 /* IQKeyboardManagerSwift */; };
 		767C5FEE27ED895800BD5B39 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C5FED27ED895800BD5B39 /* OnboardingCollectionViewCell.swift */; };
@@ -119,6 +120,7 @@
 		763DF40D27CB392A00D8F552 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		763DF41027CB3C4A00D8F552 /* AssetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsCollectionViewCell.swift; sourceTree = "<group>"; };
 		763DF41227CB3D5E00D8F552 /* CustomAssetImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAssetImageView.swift; sourceTree = "<group>"; };
+		765C386E2816F885006C785C /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		7662EC1427FAABB8005B4596 /* AssetPriceItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetPriceItemInfoVC.swift; sourceTree = "<group>"; };
 		767C5FED27ED895800BD5B39 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		767C5FEF27ED899600BD5B39 /* OnboardingSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlides.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				767C5FFB27ED962D00BD5B39 /* UserDefaults+Ext.swift */,
 				7621A11B27FA019400452446 /* UIView+Ext.swift */,
 				76A7FC3D2808245000392DBA /* String+Ext.swift */,
+				765C386E2816F885006C785C /* UIImage+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				76289E9827CA3A59009B70DD /* CustomDefaultStyleButton.swift in Sources */,
 				76289E9627CA3750009B70DD /* CalendarVC.swift in Sources */,
 				76BC92F827F2EAF900D763CB /* EmptyStateView.swift in Sources */,
+				765C386F2816F885006C785C /* UIImage+Ext.swift in Sources */,
 				767C5FFF27EDA21900BD5B39 /* FirstLaunch.swift in Sources */,
 				763DF40727CB32A100D8F552 /* NetworkManager.swift in Sources */,
 				763DF40927CB33B900D8F552 /* URLSession+Ext.swift in Sources */,
@@ -822,7 +826,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 2MRY8P7863;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NFT-Helper/Info.plist";
@@ -854,7 +858,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 2MRY8P7863;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NFT-Helper/Info.plist";

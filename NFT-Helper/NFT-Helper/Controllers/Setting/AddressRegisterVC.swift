@@ -76,7 +76,7 @@ final class AddressRegisterVC: UIViewController {
         metamaskView.addSubviews(metamaskImageView, metamaskLabel)
         kaikasView.addSubviews(kaikasImageView, kaikasLabel)
         
-        authDescriptionLabel.text = "지갑주소를 등록해주세요\n생략 가능"
+        authDescriptionLabel.text = "지갑주소를 등록해주세요\n"
         authDescriptionLabel.numberOfLines = 0
         
         metamaskLabel.text = "메타마스크"
@@ -154,7 +154,11 @@ final class AddressRegisterVC: UIViewController {
         
         if (addressType != .none) && !isValidAddress(text: walletAddressTextField.text) {
             self.presentDefaultStyleAlertVC(title: "에러", body: "지갑주소형식이 잘못되었습니다.", buttonTitle: "확인")
-        } else {
+        }
+        else if addressType == .none {
+            self.presentDefaultStyleAlertVC(title: "에러", body: "지갑종류를 선택해주세요.", buttonTitle: "확인")
+        }
+        else {
             if isFirst! {
                 UserDefaults.walletAddress = walletAddressTextField.text
                 

@@ -9,7 +9,7 @@ import UIKit
 
 final class CustomAssetImageView: UIImageView {
 
-    private let placeholderImage = UIImage(named: "dented_feels1")
+    private let placeholderImage = UIImage(systemName: "shippingbox")
     private let cache = NetworkManager.shared.cache
 
     override init(frame: CGRect) {

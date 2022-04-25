@@ -159,13 +159,23 @@ final class AddressRegisterVC: UIViewController {
             self.presentDefaultStyleAlertVC(title: "에러", body: "지갑종류를 선택해주세요.", buttonTitle: "확인")
         }
         else {
+            let model = WalletAddress(address: walletAddressTextField.text!, type: addressType)
+            
             if isFirst! {
                 UserDefaults.walletAddress = walletAddressTextField.text
+                UserDefaults.isEmptyWalletAddress = false
                 
-                presentTabbarVC()
+                PersistenceManager.updateWith(addressModel: model, actionType: .add) { error in
+                    guard let _ = error else {
+                        DispatchQueue.main.async {
+                            self.presentTabbarVC()
+                        }
+                        return
+                    }
+                    print("에러")
+                }
             }
             else {
-                let model = WalletAddress(address: walletAddressTextField.text!, type: addressType)
                 PersistenceManager.updateWith(addressModel: model, actionType: .add) { error in
                     guard let _ = error else {
                         DispatchQueue.main.async {

@@ -116,6 +116,12 @@ extension AssetModelInfoVC: AssetItemInfoVCDelegate {
 
 extension AssetModelInfoVC: AssetPriceItemInfoVCDelegate {
     func didTapPrice(for assetModel: AddressCollectionModel) {
-        self.navigationController?.pushViewController(CalculatorVC(fp: assetModel.stats["floor_price"]!), animated: true)
+        
+        if let fp = assetModel.stats["floor_price"],
+           let price = fp {
+            self.navigationController?.pushViewController(CalculatorVC(fp: price), animated: true)
+        } else {
+            self.navigationController?.pushViewController(CalculatorVC(fp: 0.0), animated: true)
+        }
     }
 }

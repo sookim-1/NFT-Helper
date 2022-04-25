@@ -41,7 +41,7 @@ final class MainVC: UIViewController {
     
     private func configureLogoImageView() {
         view.addSubview(logoImageView)
-        logoImageView.image = UIImage(named: "metatoy_2")!
+        logoImageView.image = UIImage(named: "logo")!
         logoImageView.layer.cornerRadius = 100
         logoImageView.clipsToBounds = true
         

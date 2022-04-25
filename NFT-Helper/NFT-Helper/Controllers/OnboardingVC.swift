@@ -88,9 +88,9 @@ final class OnboardingVC: UIViewController {
         let thirdOnboardingAttributedString = NSMutableAttributedString(string: "실시간 원화가격으로 계산해 보세요")
         
         slides = [
-            OnboardingSlide(titleText: firstOnboardingAttributedString, imageName: "metatoy_1"),
-            OnboardingSlide(titleText: secondOnboardingAttributedString, imageName: "metatoy_2"),
-            OnboardingSlide(titleText: thirdOnboardingAttributedString, imageName: "metatoy_3")
+            OnboardingSlide(titleText: firstOnboardingAttributedString, imageName: "logo"),
+            OnboardingSlide(titleText: secondOnboardingAttributedString, imageName: "kaikas"),
+            OnboardingSlide(titleText: thirdOnboardingAttributedString, imageName: "metamask")
         ]
     }
 

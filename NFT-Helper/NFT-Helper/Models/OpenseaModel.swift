@@ -10,7 +10,7 @@ import Foundation
 struct AddressCollectionModel: Codable, Hashable {
     let id = UUID()
     var name: String
-    let stats: [String: Double]
+    let stats: [String: Double?]
     let externalURL: String?
     let imageURL: String?
     let slug: String
@@ -32,7 +32,7 @@ struct Post: Codable {
 }
 
 struct CollectionsModel: Codable {
-    let stats: [String: Double]
+    let stats: [String: Double?]
     let name: String
     let imageURL: String?
     let externalURL: String?

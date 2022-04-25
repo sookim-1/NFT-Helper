@@ -46,7 +46,6 @@ final class AssetsCollectionViewCell: UICollectionViewCell {
     
         return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
     }
-
     
     private func setUpLayout() {
         contentView.snp.makeConstraints { make in

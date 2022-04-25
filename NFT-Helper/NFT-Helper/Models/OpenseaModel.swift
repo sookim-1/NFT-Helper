@@ -9,7 +9,7 @@ import Foundation
 
 struct AddressCollectionModel: Codable, Hashable {
     let id = UUID()
-    let name: String
+    var name: String
     let stats: [String: Double]
     let externalURL: String?
     let imageURL: String?

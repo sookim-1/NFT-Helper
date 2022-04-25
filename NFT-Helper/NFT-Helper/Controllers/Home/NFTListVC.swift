@@ -18,6 +18,7 @@ final class NFTListVC: UIViewController {
     
     var walletAddress: String?
     var slugArray: [String] = []
+    var slugArrayCount: Int = 0
     
     private var addressCollectionModels: [AddressCollectionModel] = []
     private var filterdAddressCollectionModels: [AddressCollectionModel] = []
@@ -45,7 +46,30 @@ final class NFTListVC: UIViewController {
         slugArray = []
         configureWalletAddress()
         scrappingWalletAddress()
-        kaikasGetAddressCollection(slugArray: slugArray)
+        kaikasGetAddressCollection(slugArray: slugArray) { count in
+            print("끝난 숫자\(count)")
+            
+            if count == self.slugArrayCount {
+                print("@붙인 문자열 : \(self.stringConvert())")
+                self.callURL(text: self.stringConvert()) { result in
+                    switch result {
+                    case .success(let callToData):
+                        var result = callToData.message.result.translatedText.components(separatedBy: "@")
+                        result.removeLast()
+                        print("결과배열:\(result)")
+                        print("count:\(count)")
+                        for index in 0..<count {
+                            self.addressCollectionModels[index].name = result[index]
+                        }
+                        self.updateData(on: self.addressCollectionModels)
+                        self.dismissLoadingView()
+                    case .failure(let error):
+                        print(error.rawValue)
+                        self.dismissLoadingView()
+                    }
+                }
+            }
+        }
 
         //callURL(text: str)
         
@@ -149,48 +173,47 @@ final class NFTListVC: UIViewController {
 //    }
     
     // MARK: 카이카스 지원 API
-    private func kaikasGetAddressCollection(slugArray: [String]) {
+    private func kaikasGetAddressCollection(slugArray: [String], completion: @escaping (Int) -> Void) {
         showLoadingView()
         
         let setResult: Set<String> = Set(slugArray)
         let arrayResult = Array(setResult)
+        slugArrayCount = arrayResult.count
         
         print("\(arrayResult)")
+        //let semaphore = DispatchSemaphore(value: 1)
+        var countThread = 0
         
         for i in 0..<arrayResult.count {
-            NetworkManager.shared.addCollection(url: Endpoint.kaikasCollection(slug: arrayResult[i]).url) { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .success(let value):
-                    let addressCollection = AddressCollectionModel(name: value.collection.name, stats: value.collection.stats, externalURL: value.collection.externalURL, imageURL: value.collection.imageURL, slug: arrayResult[i])
-                    self.addressCollectionModels.append(addressCollection)
-                    print("이름 :\(addressCollection.name)")
-                    self.updateData(on: self.addressCollectionModels)
-                    
-                    print(i)
-                    print(arrayResult.count)
-                    if i == arrayResult.count - 1 {
+            DispatchQueue(label: "SerialQueue").sync {
+                //semaphore.wait()
+                
+                NetworkManager.shared.addCollection(url: Endpoint.kaikasCollection(slug: arrayResult[i]).url) { [weak self] result in
+                    guard let self = self else { return }
+                    switch result {
+                    case .success(let value):
+                        let addressCollection = AddressCollectionModel(name: value.collection.name, stats: value.collection.stats, externalURL: value.collection.externalURL, imageURL: value.collection.imageURL, slug: arrayResult[i])
+                        self.addressCollectionModels.append(addressCollection)
+                        print("이름 :\(addressCollection.name)")
+                        self.updateData(on: self.addressCollectionModels)
                         
-                        self.callURL(text: self.stringConvert()) { result in
-                            switch result {
-                            case .success(let callToData):
-                                var result = callToData.message.result.translatedText.components(separatedBy: "@")
-                                result.removeLast()
-                                for index in 0..<self.addressCollectionModels.count {
-                                    self.addressCollectionModels[index].name = result[index]
-                                }
-                                self.updateData(on: self.addressCollectionModels)
-                                self.dismissLoadingView()
-                            case .failure(let error):
-                                self.presentDefaultStyleAlertVC(title: "에러", body: error.rawValue, buttonTitle: "확인")
-                            }
-                        }
+                        countThread += 1
+                        print("인덱스: \(i)")
+                        
+                        print(countThread)
+                        print("배열 개수: \(arrayResult.count)")
+                        completion(countThread)
+                    case .failure(let error):
+                        self.presentDefaultStyleAlertVC(title: "에러", body: error.rawValue, buttonTitle: "확인")
                     }
-                case .failure(let error):
-                    self.presentDefaultStyleAlertVC(title: "에러", body: error.rawValue, buttonTitle: "확인")
                 }
+                
+                //semaphore.signal()
+                
             }
         }
+        
+        
         
     }
     

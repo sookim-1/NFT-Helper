@@ -18,6 +18,7 @@ final class NFTListVC: UIViewController {
     
     var walletAddress: String?
     var slugArray: [String] = []
+    var slugArrayCount: Int = 0
     
     private var addressCollectionModels: [AddressCollectionModel] = []
     private var filterdAddressCollectionModels: [AddressCollectionModel] = []
@@ -45,7 +46,35 @@ final class NFTListVC: UIViewController {
         slugArray = []
         configureWalletAddress()
         scrappingWalletAddress()
-        kaikasGetAddressCollection(slugArray: slugArray)
+        kaikasGetAddressCollection(slugArray: slugArray) { count in
+            print("끝난 숫자\(count)")
+            
+            if count == self.slugArrayCount {
+                self.dismissLoadingView()
+//                print("@붙인 문자열 : \(self.stringConvert())")
+//                self.callURL(text: self.stringConvert()) { result in
+//                    switch result {
+//                    case .success(let callToData):
+//                        var result = callToData.message.result.translatedText.components(separatedBy: "@")
+//                        result.removeLast()
+//                        print("결과배열:\(result)")
+//                        print("count:\(count)")
+//                        for index in 0..<count {
+//                            self.addressCollectionModels[index].name = result[index]
+//                        }
+//                        self.updateData(on: self.addressCollectionModels)
+//                        self.dismissLoadingView()
+//                    case .failure(let error):
+//                        print(error.rawValue)
+//                        self.dismissLoadingView()
+//                    }
+//                }
+            }
+        }
+
+        //callURL(text: str)
+        
+        
         collectionView.reloadData()
     }
     
@@ -145,29 +174,95 @@ final class NFTListVC: UIViewController {
 //    }
     
     // MARK: 카이카스 지원 API
-    private func kaikasGetAddressCollection(slugArray: [String]) {
+    private func kaikasGetAddressCollection(slugArray: [String], completion: @escaping (Int) -> Void) {
         showLoadingView()
+        
+        if slugArray.isEmpty && !UserDefaults.isEmptyWalletAddress! {
+            self.showEmptyStateView(with: "NFT작품이 없어요😱", in: self.view)
+            self.dismissLoadingView()
+            
+            return
+        }
+        
+        let emptyView = view.viewWithTag(199)
+        emptyView?.removeFromSuperview()
         
         let setResult: Set<String> = Set(slugArray)
         let arrayResult = Array(setResult)
+        slugArrayCount = arrayResult.count
         
         print("\(arrayResult)")
+        //let semaphore = DispatchSemaphore(value: 1)
+        var countThread = 0
         
-        for i in arrayResult {
-            NetworkManager.shared.addCollection(url: Endpoint.kaikasCollection(slug: i).url) { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .success(let value):
-                    let addressCollection = AddressCollectionModel(name: value.collection.name, stats: value.collection.stats, externalURL: value.collection.externalURL, imageURL: value.collection.imageURL, slug: i)
-                    self.addressCollectionModels.append(addressCollection)
-                    self.updateData(on: self.addressCollectionModels)
-                case .failure(let error):
-                    self.presentDefaultStyleAlertVC(title: "에러", body: error.rawValue, buttonTitle: "확인")
+        for i in 0..<arrayResult.count {
+            DispatchQueue(label: "SerialQueue").sync {
+                //semaphore.wait()
+                
+                NetworkManager.shared.addCollection(url: Endpoint.kaikasCollection(slug: arrayResult[i]).url) { [weak self] result in
+                    guard let self = self else { return }
+                    switch result {
+                    case .success(let value):
+                        
+                        
+                        var addressCollection = AddressCollectionModel(name: value.collection.name, stats: value.collection.stats, externalURL: value.collection.externalURL, imageURL: value.collection.imageURL, slug: arrayResult[i])
+                        
+                        print("처음 이름 :\(addressCollection.name)")
+                        
+                        // 여기서 번역해보기
+                        self.callURL(text: addressCollection.name) { result in
+                            switch result {
+                            case .success(let papagoData):
+                                addressCollection.name = papagoData.message.result.translatedText
+                                self.addressCollectionModels.append(addressCollection)
+                                print("이름 :\(addressCollection.name)")
+                                
+                                self.updateData(on: self.addressCollectionModels)
+                 
+                            case .failure(_):
+                                print("번역에러")
+                                self.addressCollectionModels.append(addressCollection)
+                                print("이름 :\(addressCollection.name)")
+                                
+                                self.updateData(on: self.addressCollectionModels)
+                       
+                            }
+                        }
+                        
+                        
+                        countThread += 1
+                        print("인덱스: \(i)")
+                        
+                        print(countThread)
+                        print("배열 개수: \(arrayResult.count)")
+                        completion(countThread)
+                    case .failure(let error):
+                        self.presentDefaultStyleAlertVC(title: "에러", body: error.rawValue, buttonTitle: "확인")
+                    }
                 }
+                
+                //semaphore.signal()
+                
             }
         }
         
-        dismissLoadingView()
+        
+        
+    }
+    
+    func stringConvert() -> String {
+        var str = ""
+        
+        for i in 0..<addressCollectionModels.count {
+            addressCollectionModels[i].name = addressCollectionModels[i].name.replacingOccurrences(of: " ", with: "")
+        }
+        
+        for i in 0..<addressCollectionModels.count {
+            str.append(addressCollectionModels[i].name)
+            str.append("@")
+        }
+        
+        return str
     }
     
     
@@ -175,9 +270,13 @@ final class NFTListVC: UIViewController {
     private func scrappingWalletAddress() {
         
         guard let walletAddress = walletAddress else {
-            self.showEmptyStateView(with: "NFT작품이 없어요😱", in: self.view)
+            self.showEmptyStateView(with: "지갑주소를 등록해주세요😱", in: self.view)
+            self.dismissLoadingView()
+            UserDefaults.isEmptyWalletAddress = true
+            
             return
         }
+        
         let emptyView = view.viewWithTag(99)
         emptyView?.removeFromSuperview()
         
@@ -200,6 +299,20 @@ final class NFTListVC: UIViewController {
        }
     }
     
+    
+    func callURL(text: String, completion: @escaping (Result<PaPagoModel, NetWorkErrorMessage>) -> Void) {
+        let param = "source=en&target=ko&text=\(text)"
+        let paramData = param.data(using: .utf8)
+    
+        var request = URLRequest(url: URL(string: PaPagoAPIKey.papagoURLString)!)
+        request.httpMethod = "POST"
+        request.addValue(PaPagoAPIKey.ClientID, forHTTPHeaderField: "X-Naver-Client-Id")
+        request.addValue(PaPagoAPIKey.ClientSecret, forHTTPHeaderField: "X-Naver-Client-Secret")
+        request.httpBody = paramData
+        request.setValue(String(paramData!.count), forHTTPHeaderField: "Content-Length")
+        
+        URLSession.request(endpoint: request, completion: completion)
+    }
 }
 
 extension NFTListVC: UICollectionViewDelegate {
@@ -240,4 +353,20 @@ extension NFTListVC: UISearchResultsUpdating, UISearchBarDelegate {
         updateData(on: addressCollectionModels)
     }
 
+}
+
+
+// MARK: - Post
+struct PaPagoModel: Codable {
+    let message: Message
+}
+
+// MARK: - Message
+struct Message: Codable {
+    let result: TranslateResult
+}
+
+// MARK: - Result
+struct TranslateResult: Codable {
+    let translatedText: String
 }

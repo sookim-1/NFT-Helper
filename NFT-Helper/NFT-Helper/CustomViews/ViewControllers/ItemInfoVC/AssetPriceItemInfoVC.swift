@@ -32,7 +32,9 @@ class AssetPriceItemInfoVC: ItemInfoVC {
     }
     
     private func configureItems() {
-        itemInfoViewOne.set(itemInfoType: .floorPrice, subLabelText: "\(addressCollectionModel.stats["floor_price"]!)")
+        guard let fp = addressCollectionModel.stats["floor_price"] else { return }
+    
+        itemInfoViewOne.set(itemInfoType: .floorPrice, subLabelText: "\(fp ?? 0)")
         actionButton.set(backgroundColor: .systemPink.withAlphaComponent(0.7), title: "원화 가격")
     }
     

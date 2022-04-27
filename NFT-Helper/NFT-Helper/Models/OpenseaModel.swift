@@ -28,12 +28,12 @@ struct SingleAssetStatsModel: Codable {
 }
 
 struct Post: Codable {
-    let collection: CollectionsModel
+    var collection: CollectionsModel
 }
 
 struct CollectionsModel: Codable {
     let stats: [String: Double?]
-    let name: String
+    var name: String
     let imageURL: String?
     let externalURL: String?
     

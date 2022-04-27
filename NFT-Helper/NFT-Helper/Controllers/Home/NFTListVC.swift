@@ -50,24 +50,25 @@ final class NFTListVC: UIViewController {
             print("끝난 숫자\(count)")
             
             if count == self.slugArrayCount {
-                print("@붙인 문자열 : \(self.stringConvert())")
-                self.callURL(text: self.stringConvert()) { result in
-                    switch result {
-                    case .success(let callToData):
-                        var result = callToData.message.result.translatedText.components(separatedBy: "@")
-                        result.removeLast()
-                        print("결과배열:\(result)")
-                        print("count:\(count)")
-                        for index in 0..<count {
-                            self.addressCollectionModels[index].name = result[index]
-                        }
-                        self.updateData(on: self.addressCollectionModels)
-                        self.dismissLoadingView()
-                    case .failure(let error):
-                        print(error.rawValue)
-                        self.dismissLoadingView()
-                    }
-                }
+                self.dismissLoadingView()
+//                print("@붙인 문자열 : \(self.stringConvert())")
+//                self.callURL(text: self.stringConvert()) { result in
+//                    switch result {
+//                    case .success(let callToData):
+//                        var result = callToData.message.result.translatedText.components(separatedBy: "@")
+//                        result.removeLast()
+//                        print("결과배열:\(result)")
+//                        print("count:\(count)")
+//                        for index in 0..<count {
+//                            self.addressCollectionModels[index].name = result[index]
+//                        }
+//                        self.updateData(on: self.addressCollectionModels)
+//                        self.dismissLoadingView()
+//                    case .failure(let error):
+//                        print(error.rawValue)
+//                        self.dismissLoadingView()
+//                    }
+//                }
             }
         }
 
@@ -202,10 +203,32 @@ final class NFTListVC: UIViewController {
                     guard let self = self else { return }
                     switch result {
                     case .success(let value):
-                        let addressCollection = AddressCollectionModel(name: value.collection.name, stats: value.collection.stats, externalURL: value.collection.externalURL, imageURL: value.collection.imageURL, slug: arrayResult[i])
-                        self.addressCollectionModels.append(addressCollection)
-                        print("이름 :\(addressCollection.name)")
-                        self.updateData(on: self.addressCollectionModels)
+                        
+                        
+                        var addressCollection = AddressCollectionModel(name: value.collection.name, stats: value.collection.stats, externalURL: value.collection.externalURL, imageURL: value.collection.imageURL, slug: arrayResult[i])
+                        
+                        print("처음 이름 :\(addressCollection.name)")
+                        
+                        // 여기서 번역해보기
+                        self.callURL(text: addressCollection.name) { result in
+                            switch result {
+                            case .success(let papagoData):
+                                addressCollection.name = papagoData.message.result.translatedText
+                                self.addressCollectionModels.append(addressCollection)
+                                print("이름 :\(addressCollection.name)")
+                                
+                                self.updateData(on: self.addressCollectionModels)
+                 
+                            case .failure(_):
+                                print("번역에러")
+                                self.addressCollectionModels.append(addressCollection)
+                                print("이름 :\(addressCollection.name)")
+                                
+                                self.updateData(on: self.addressCollectionModels)
+                       
+                            }
+                        }
+                        
                         
                         countThread += 1
                         print("인덱스: \(i)")

@@ -32,6 +32,9 @@ final class AssetsCollectionViewCell: UICollectionViewCell {
         assetNameLabel.text = asset.name
 //        assetImageView.downloadImage(from: asset.imageURL)
         assetImageView.image = asset.name.textToImage(imgSize: CGSize(width: 60, height: 60))?.imageWithColor(color: getRandomColor())
+        //assetImageView.image?.withAlignmentRectInsets(UIEdgeInsets(top: -4, left: -4, bottom: -4, right: -4))
+        //assetImageView.contentMode = .scaleAspectFill
+        assetImageView.backgroundColor = .systemCyan.withAlphaComponent(0.1)
     }
 
     private func configure() {

@@ -2,15 +2,26 @@
   "object": {
     "pins": [
       {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> cbb1afcf57cce2c461fff4d763a4c2f7447d5c5a
         "package": "Alamofire",
         "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
         "state": {
           "branch": "master",
+<<<<<<< HEAD
+          "revision": "4e1103600bef06bd26e42564063e8fe8c25ef3d2",
+=======
           "revision": "6eeff3c57e02f07c8494433aed8bf90532010089",
+>>>>>>> cbb1afcf57cce2c461fff4d763a4c2f7447d5c5a
           "version": null
         }
       },
       {
+<<<<<<< HEAD
+=======
         "package": "IQKeyboardManagerSwift",
         "repositoryURL": "https://github.com/hackiftekhar/IQKeyboardManager.git",
         "state": {
@@ -20,15 +31,24 @@
         }
       },
       {
+>>>>>>> cbb1afcf57cce2c461fff4d763a4c2f7447d5c5a
         "package": "ProgressHUD",
         "repositoryURL": "https://github.com/relatedcode/ProgressHUD.git",
         "state": {
           "branch": "master",
+<<<<<<< HEAD
+          "revision": "22c3f83268b4c47b4623fe3a9701af7310fa8d8a",
+=======
           "revision": "b88ca85d471894464c1f4dc989f142c97b2b8958",
+>>>>>>> cbb1afcf57cce2c461fff4d763a4c2f7447d5c5a
           "version": null
         }
       },
       {
+<<<<<<< HEAD
+>>>>>>> 551e964201d62e1fd393424ff727de0433aa9ee9
+=======
+>>>>>>> cbb1afcf57cce2c461fff4d763a4c2f7447d5c5a
         "package": "SnapKit",
         "repositoryURL": "https://github.com/SnapKit/SnapKit",
         "state": {
@@ -38,6 +58,9 @@
         }
       },
       {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
         "package": "Starscream",
         "repositoryURL": "https://github.com/daltoniam/Starscream.git",
         "state": {
@@ -56,12 +79,21 @@
         }
       },
       {
+>>>>>>> cbb1afcf57cce2c461fff4d763a4c2f7447d5c5a
         "package": "Toast",
         "repositoryURL": "https://github.com/scalessec/Toast-Swift.git",
         "state": {
           "branch": null,
           "revision": "0c9493eeacb102cc614da385cfaaf475379f4ab4",
           "version": "5.0.1"
+=======
+        "package": "Starscream",
+        "repositoryURL": "https://github.com/daltoniam/Starscream.git",
+        "state": {
+          "branch": null,
+          "revision": "df8d82047f6654d8e4b655d1b1525c64e1059d21",
+          "version": "4.0.4"
+>>>>>>> 551e964201d62e1fd393424ff727de0433aa9ee9
         }
       }
     ]

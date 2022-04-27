@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76289E9627CA3750009B70DD /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76289E9527CA3750009B70DD /* SecondVC.swift */; };
 		7621A11A27F9FC0900452446 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7621A11927F9FC0900452446 /* CustomTabBarController.swift */; };
 		7621A11C27FA019400452446 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7621A11B27FA019400452446 /* UIView+Ext.swift */; };
 		7621A11F27FA06CD00452446 /* WalletAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7621A11E27FA06CD00452446 /* WalletAddress.swift */; };
@@ -75,6 +76,9 @@
 		76F4D34228007DEA00C80875 /* MonthMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F4D34128007DEA00C80875 /* MonthMetadata.swift */; };
 		76F4D34528007EA400C80875 /* CalendarDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F4D34428007EA400C80875 /* CalendarDataError.swift */; };
 		76F4D34728008B1D00C80875 /* CalendarDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F4D34628008B1D00C80875 /* CalendarDateCollectionViewCell.swift */; };
+		76EA7BFB27C0F518004A56C1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 76EA7BFA27C0F518004A56C1 /* SnapKit */; };
+		76EA7C0127C0F821004A56C1 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 76EA7C0027C0F821004A56C1 /* Starscream */; };
+		76EA7C0427C11634004A56C1 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 76EA7C0327C11634004A56C1 /* ProgressHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +171,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76EA7BFB27C0F518004A56C1 /* SnapKit in Frameworks */,
+				7681D3AD27C13766003A753A /* Alamofire in Frameworks */,
+				76EA7C0427C11634004A56C1 /* ProgressHUD in Frameworks */,
+				76EA7C0127C0F821004A56C1 /* Starscream in Frameworks */,
 				7662EC1827FABDC6005B4596 /* IQKeyboardManagerSwift in Frameworks */,
 				7621A13527FA207000452446 /* Alamofire in Frameworks */,
 				76289EA227CA454C009B70DD /* Toast in Frameworks */,
@@ -351,6 +359,11 @@
 				76A7FC342807D85200392DBA /* CalendarListTableViewCell.swift */,
 			);
 			path = CustomCells;
+		7681D3AB27C1375F003A753A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		767C5FFD27EDA20500BD5B39 /* Helper */ = {
@@ -399,6 +412,7 @@
 				76EA7BDF27C0CCAC004A56C1 /* NFT-HelperTests */,
 				76EA7BE927C0CCAC004A56C1 /* NFT-HelperUITests */,
 				76EA7BC727C0CCA9004A56C1 /* Products */,
+				7681D3AB27C1375F003A753A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -424,6 +438,13 @@
 				763DF40027CB2BBC00D8F552 /* Supports */,
 				763DF40F27CB3C1500D8F552 /* CustomCells */,
 				763DF40C27CB391B00D8F552 /* Errors */,
+				76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */,
+				76EA7BCB27C0CCA9004A56C1 /* SceneDelegate.swift */,
+				76EA7BCD27C0CCA9004A56C1 /* ViewController.swift */,
+				762836E127C341910069DD9E /* TestVC.swift */,
+				762836E527C401020069DD9E /* Test2VC.swift */,
+				76EA7BD227C0CCAC004A56C1 /* Assets.xcassets */,
+				76EA7BD427C0CCAC004A56C1 /* LaunchScreen.storyboard */,
 				767C5FFD27EDA20500BD5B39 /* Helper */,
 				76EA7BD727C0CCAC004A56C1 /* Info.plist */,
 			);
@@ -474,8 +495,10 @@
 			);
 			name = "NFT-Helper";
 			packageProductDependencies = (
-				76289E9C27CA3CC7009B70DD /* SnapKit */,
-				76289EA127CA454C009B70DD /* Toast */,
+				76EA7BFA27C0F518004A56C1 /* SnapKit */,
+				76EA7C0027C0F821004A56C1 /* Starscream */,
+				76EA7C0327C11634004A56C1 /* ProgressHUD */,
+				7681D3AC27C13766003A753A /* Alamofire */,
 				7627E44727F2146500A17FB0 /* SwiftSoup */,
 				7621A13127FA206400452446 /* Starscream */,
 				7621A13427FA207000452446 /* Alamofire */,
@@ -555,8 +578,10 @@
 			);
 			mainGroup = 76EA7BBD27C0CCA9004A56C1;
 			packageReferences = (
-				76289E9B27CA3CC7009B70DD /* XCRemoteSwiftPackageReference "SnapKit" */,
-				76289EA027CA454C009B70DD /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				76EA7BF927C0F518004A56C1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				76EA7BFF27C0F821004A56C1 /* XCRemoteSwiftPackageReference "Starscream" */,
+				76EA7C0227C11634004A56C1 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
+				7681D3AA27C1357D003A753A /* XCRemoteSwiftPackageReference "Alamofire" */,
 				7627E44627F2146500A17FB0 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				7621A13027FA206400452446 /* XCRemoteSwiftPackageReference "Starscream" */,
 				7621A13327FA207000452446 /* XCRemoteSwiftPackageReference "Alamofire" */,
@@ -654,6 +679,10 @@
 				7621A12527FA093000452446 /* PersistenceMangager.swift in Sources */,
 				763DF40B27CB351000D8F552 /* EndPoint.swift in Sources */,
 				76289EA427CA456C009B70DD /* UIViewController+Ext.swift in Sources */,
+				762836E227C341910069DD9E /* TestVC.swift in Sources */,
+				76EA7BCE27C0CCA9004A56C1 /* ViewController.swift in Sources */,
+				76EA7BCA27C0CCA9004A56C1 /* AppDelegate.swift in Sources */,
+				762836E627C401020069DD9E /* Test2VC.swift in Sources */,
 				7621A12227FA073B00452446 /* AddressTableViewCell.swift in Sources */,
 				765C38742817028D006C785C /* APIKey.swift in Sources */,
 				7662EC1527FAABB9005B4596 /* AssetPriceItemInfoVC.swift in Sources */,
@@ -1028,15 +1057,8 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7621A13027FA206400452446 /* XCRemoteSwiftPackageReference "Starscream" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/daltoniam/Starscream.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		7621A13327FA207000452446 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		76289E9B27CA3CC7009B70DD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		7681D3AA27C1357D003A753A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -1044,23 +1066,7 @@
 				kind = branch;
 			};
 		};
-		7621A13627FA207B00452446 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/relatedcode/ProgressHUD.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		7627E44627F2146500A17FB0 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/scinfu/SwiftSoup";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.8;
-			};
-		};
-		76289E9B27CA3CC7009B70DD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		76EA7BF927C0F518004A56C1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -1068,12 +1074,20 @@
 				kind = branch;
 			};
 		};
-		76289EA027CA454C009B70DD /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+		76EA7BFF27C0F821004A56C1 /* XCRemoteSwiftPackageReference "Starscream" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			repositoryURL = "https://github.com/daltoniam/Starscream.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				minimumVersion = 4.0.0;
+			};
+		};
+		76EA7C0227C11634004A56C1 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD.git";
+			requirement = {
+				branch = master;
+				kind = branch;
 			};
 		};
 		7662EC1627FABDC6005B4596 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
@@ -1116,6 +1130,25 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 76289EA027CA454C009B70DD /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		7681D3AC27C13766003A753A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7681D3AA27C1357D003A753A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		76EA7BFA27C0F518004A56C1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76EA7BF927C0F518004A56C1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		76EA7C0027C0F821004A56C1 /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76EA7BFF27C0F821004A56C1 /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+		76EA7C0327C11634004A56C1 /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76EA7C0227C11634004A56C1 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
 		};
 		7662EC1727FABDC6005B4596 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;

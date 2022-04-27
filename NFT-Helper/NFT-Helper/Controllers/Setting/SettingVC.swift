@@ -28,6 +28,7 @@ class SettingVC: UIViewController {
     func configureViewController() {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         navigationItem.rightBarButtonItem = addButton
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     @objc func addButtonTapped() {
@@ -85,6 +86,8 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UserDefaults.walletAddress = walletAddressList[indexPath.row].address
+        UserDefaults.isEmptyWalletAddress = false
+        
         tabBarController?.selectedIndex = 0
     }
     

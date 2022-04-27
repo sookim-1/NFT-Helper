@@ -115,7 +115,7 @@ class CalculatorVC: UIViewController, WebSocketDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        ProgressHUD.show("가격을 업데이트 중입니다.")
+        getCurrentPrice()
         connect()
     }
 
@@ -123,12 +123,46 @@ class CalculatorVC: UIViewController, WebSocketDelegate {
         super.viewWillDisappear(animated)
 
         disconnect()
-        ProgressHUD.dismiss()
+    }
+    
+    func getCurrentPrice() {
+        
+        ProgressHUD.show("가격을 업데이트 중입니다.")
+        
+        NetworkManager.shared.getCurrentPrice(url: "https://api.bithumb.com/public/transaction_history/ETH_KRW?") { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let value):
+                self.ethPriceLabel.text = "이더리움 가격 : \(value.data[0].price)원"
+                self.ethPrice = Double(value.data.first?.price ?? "")!
+                self.allGetFlag.ethFlag = true
+            case .failure(_):
+                self.presentDefaultStyleAlertVC(title: "가격 오류", body: "가격을 불러올수없습니다.", buttonTitle: "확인")
+            }
+        }
+        
+        NetworkManager.shared.getCurrentPrice(url: "https://api.bithumb.com/public/transaction_history/KLAY_KRW?") { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let value):
+                self.klayPriceLabel.text = "클레이 가격 : \(value.data[0].price)원"
+                self.klayPrice = Double(value.data.first?.price ?? "")!
+                self.allGetFlag.klayFlag = true
+                
+                ProgressHUD.dismiss()
+                self.calculatorButton.isEnabled = true
+            case .failure(_):
+                self.presentDefaultStyleAlertVC(title: "가격 오류", body: "가격을 불러올수없습니다.", buttonTitle: "확인")
+            }
+        }
+        
+        
     }
 
     func configure() {
         view.backgroundColor = .systemBackground
         view.addSubviews(ethPriceLabel, ethImageView, klayPriceLabel, klayImageView, calculatorButton, floorPriceLabel, customSegmentControl, priceTextField)
+        navigationController?.navigationBar.prefersLargeTitles = true
         calculatorButton.addTarget(self, action: #selector(getPrice), for: .touchUpInside)
     }
 
@@ -225,7 +259,6 @@ class CalculatorVC: UIViewController, WebSocketDelegate {
                 allGetFlag.klayFlag = true
             }
             if allGetFlag.ethFlag {
-                ProgressHUD.dismiss()
                 calculatorButton.isEnabled = true
             }
 

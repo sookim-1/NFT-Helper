@@ -31,8 +31,8 @@ class AssetModelInfoHeaderVC: UIViewController {
         addSubViews()
         layoutUI()
         
-        avatarImageView.downloadImage(from: assetModel.imageURL)
-
+        //avatarImageView.downloadImage(from: assetModel.imageURL)
+        avatarImageView.image = assetModel.name.textToImage(imgSize: CGSize(width: 60, height: 60))?.imageWithColor(color: getRandomColor())
     }
     
     func addSubViews() {

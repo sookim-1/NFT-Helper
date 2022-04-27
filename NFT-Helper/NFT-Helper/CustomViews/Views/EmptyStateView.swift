@@ -38,7 +38,7 @@ final class EmptyStateView: UIView {
         messageLabel.numberOfLines = 3
         messageLabel.textColor = .secondaryLabel
 
-        logoImageView.image = UIImage(named: "torix_1")
+        logoImageView.image = UIImage(systemName: "person.fill")
         
         messageLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview().offset(-150)

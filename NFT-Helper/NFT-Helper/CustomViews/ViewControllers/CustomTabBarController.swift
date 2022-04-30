@@ -19,12 +19,12 @@ class CustomTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let homeModel = TabBarSubModel(title: "홈", image: UIImage(systemName: "house")!, selectedImage: UIImage(systemName: "house.fill")!, tag: 0)
-        let calendarModel = TabBarSubModel(title: "일정", image: UIImage(systemName: "calendar.circle")!, selectedImage: UIImage(systemName: "calendar.circle.fill")!, tag: 1)
-        let calculatorModel = TabBarSubModel(title: "계산기", image: UIImage(systemName: "square.grid.3x3")!, selectedImage: UIImage(systemName: "square.grid.3x3.fill")!, tag: 2)
-        let settingModel = TabBarSubModel(title: "설정", image: UIImage(systemName: "person")!, selectedImage: UIImage(systemName: "person.fill")!, tag: 3)
+        //let homeModel = TabBarSubModel(title: "홈", image: UIImage(systemName: "house")!, selectedImage: UIImage(systemName: "house.fill")!, tag: 0)
+        let calendarModel = TabBarSubModel(title: "일정", image: UIImage(systemName: "calendar.circle")!, selectedImage: UIImage(systemName: "calendar.circle.fill")!, tag: 0)
+        let calculatorModel = TabBarSubModel(title: "계산기", image: UIImage(systemName: "square.grid.3x3")!, selectedImage: UIImage(systemName: "square.grid.3x3.fill")!, tag: 1)
+        let settingModel = TabBarSubModel(title: "설정", image: UIImage(systemName: "person")!, selectedImage: UIImage(systemName: "person.fill")!, tag: 2)
         
-        viewControllers = [createTabbarSubVC(viewcotroller: NFTListVC(), tabBarSubModel: homeModel),
+        viewControllers = [//createTabbarSubVC(viewcotroller: NFTListVC(), tabBarSubModel: homeModel),
                            createTabbarSubVC(viewcotroller: CalendarListTableVC(), tabBarSubModel: calendarModel),
                            createTabbarSubVC(viewcotroller: CalculatorVC(fp: 0), tabBarSubModel: calculatorModel),
                            createTabbarSubVC(viewcotroller: SettingVC(), tabBarSubModel: settingModel)]

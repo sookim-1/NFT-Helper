@@ -98,12 +98,12 @@ class CalendarListTableVC: UITableViewController {
         if isEdit {
             self.items[indexNum] = metadata
             PersistenceManager.updateWithCalendarItem(calendarItem: metadata, actionType: .edit) { error in
-                print(error)
+                print(error ?? "에러발생")
             }
         } else {
             self.items.append(metadata)
             PersistenceManager.updateWithCalendarItem(calendarItem: metadata, actionType: .add) { error in
-                print(error)
+                print(error ?? "에러발생")
             }
         }
         self.applySnapshot()
@@ -157,7 +157,7 @@ extension CalendarListTableVC {
             let deleteAction = UIAction(title: "삭제하기", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
                     self.items.removeAll { existingItem in
                         PersistenceManager.updateWithCalendarItem(calendarItem: existingItem, actionType: .remove) { error in
-                            print(error)
+                            print(error ?? "에러발생")
                         }
                         return existingItem == item
                     }

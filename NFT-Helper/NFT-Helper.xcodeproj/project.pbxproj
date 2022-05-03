@@ -75,6 +75,9 @@
 		76F4D34228007DEA00C80875 /* MonthMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F4D34128007DEA00C80875 /* MonthMetadata.swift */; };
 		76F4D34528007EA400C80875 /* CalendarDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F4D34428007EA400C80875 /* CalendarDataError.swift */; };
 		76F4D34728008B1D00C80875 /* CalendarDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F4D34628008B1D00C80875 /* CalendarDateCollectionViewCell.swift */; };
+		76F812BC28214AE70049105A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F812BB28214AE70049105A /* OnboardingView.swift */; };
+		76F812BF28214C870049105A /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F812BE28214C870049105A /* ViewRepresentable.swift */; };
+		76F812C228214D490049105A /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F812C128214D490049105A /* CalculatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +163,9 @@
 		76F4D34128007DEA00C80875 /* MonthMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthMetadata.swift; sourceTree = "<group>"; };
 		76F4D34428007EA400C80875 /* CalendarDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataError.swift; sourceTree = "<group>"; };
 		76F4D34628008B1D00C80875 /* CalendarDateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateCollectionViewCell.swift; sourceTree = "<group>"; };
+		76F812BB28214AE70049105A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		76F812BE28214C870049105A /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
+		76F812C128214D490049105A /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				767C5FF327ED8DD000BD5B39 /* CalculatorVC.swift */,
+				76F812C128214D490049105A /* CalculatorView.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -299,11 +306,12 @@
 		763DF40127CB2BD000D8F552 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				76F812C028214D210049105A /* Temp */,
 				76A7FC2F2807D56B00392DBA /* Calendar */,
 				7621A11D27FA034E00452446 /* Home */,
 				7621A12F27FA203300452446 /* Calculator */,
 				767C5FF127ED89C400BD5B39 /* OnboardingVC.swift */,
-				76EA7BCD27C0CCA9004A56C1 /* MainVC.swift */,
+				76F812BB28214AE70049105A /* OnboardingView.swift */,
 				7621A12027FA06F100452446 /* Setting */,
 			);
 			path = Controllers;
@@ -415,6 +423,7 @@
 		76EA7BC827C0CCA9004A56C1 /* NFT-Helper */ = {
 			isa = PBXGroup;
 			children = (
+				76F812BD28214C700049105A /* Protocols */,
 				763DF40527CB328900D8F552 /* NetworkService */,
 				7621A12327FA092300452446 /* Managers */,
 				763DF40227CB2FF100D8F552 /* Models */,
@@ -455,6 +464,22 @@
 				76A7FC3828081ED400392DBA /* MintMetadata.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		76F812BD28214C700049105A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				76F812BE28214C870049105A /* ViewRepresentable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		76F812C028214D210049105A /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				76EA7BCD27C0CCA9004A56C1 /* MainVC.swift */,
+			);
+			path = Temp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -635,12 +660,14 @@
 				7621A12E27FA1E2800452446 /* AssetModelInfoHeaderVC.swift in Sources */,
 				76F4D34228007DEA00C80875 /* MonthMetadata.swift in Sources */,
 				767C5FF427ED8DD000BD5B39 /* CalculatorVC.swift in Sources */,
+				76F812BC28214AE70049105A /* OnboardingView.swift in Sources */,
 				76289E9F27CA4203009B70DD /* NFTListVC.swift in Sources */,
 				767C5FFC27ED962D00BD5B39 /* UserDefaults+Ext.swift in Sources */,
 				76EA7BCA27C0CCA9004A56C1 /* AppDelegate.swift in Sources */,
 				76A7FC45280834A600392DBA /* DefaultSwitchTableViewCell.swift in Sources */,
 				76F4D34528007EA400C80875 /* CalendarDataError.swift in Sources */,
 				76A7FC3C2808225F00392DBA /* NewMintItemVC.swift in Sources */,
+				76F812BF28214C870049105A /* ViewRepresentable.swift in Sources */,
 				7621A11F27FA06CD00452446 /* WalletAddress.swift in Sources */,
 				763DF41327CB3D5E00D8F552 /* CustomAssetImageView.swift in Sources */,
 				76E26DC627D6F306009B00E3 /* AssetModelInfoVC.swift in Sources */,
@@ -651,6 +678,7 @@
 				763DF41127CB3C4A00D8F552 /* AssetsCollectionViewCell.swift in Sources */,
 				7621A11A27F9FC0900452446 /* CustomTabBarController.swift in Sources */,
 				76F4D34028007BFE00C80875 /* Day.swift in Sources */,
+				76F812C228214D490049105A /* CalculatorView.swift in Sources */,
 				7621A12527FA093000452446 /* PersistenceMangager.swift in Sources */,
 				763DF40B27CB351000D8F552 /* EndPoint.swift in Sources */,
 				76289EA427CA456C009B70DD /* UIViewController+Ext.swift in Sources */,

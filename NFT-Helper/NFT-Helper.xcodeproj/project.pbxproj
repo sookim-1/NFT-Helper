@@ -76,6 +76,10 @@
 		76F4D34228007DEA00C80875 /* MonthMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F4D34128007DEA00C80875 /* MonthMetadata.swift */; };
 		76F4D34528007EA400C80875 /* CalendarDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F4D34428007EA400C80875 /* CalendarDataError.swift */; };
 		76F4D34728008B1D00C80875 /* CalendarDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F4D34628008B1D00C80875 /* CalendarDateCollectionViewCell.swift */; };
+		76F812BC28214AE70049105A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F812BB28214AE70049105A /* OnboardingView.swift */; };
+		76F812BF28214C870049105A /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F812BE28214C870049105A /* ViewRepresentable.swift */; };
+		76F812C228214D490049105A /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F812C128214D490049105A /* CalculatorView.swift */; };
+		76F812C528214FB40049105A /* BithumbModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F812C428214FB40049105A /* BithumbModel.swift */; };
 		76EA7BFB27C0F518004A56C1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 76EA7BFA27C0F518004A56C1 /* SnapKit */; };
 		76EA7C0127C0F821004A56C1 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 76EA7C0027C0F821004A56C1 /* Starscream */; };
 		76EA7C0427C11634004A56C1 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 76EA7C0327C11634004A56C1 /* ProgressHUD */; };
@@ -164,6 +168,10 @@
 		76F4D34128007DEA00C80875 /* MonthMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthMetadata.swift; sourceTree = "<group>"; };
 		76F4D34428007EA400C80875 /* CalendarDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataError.swift; sourceTree = "<group>"; };
 		76F4D34628008B1D00C80875 /* CalendarDateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateCollectionViewCell.swift; sourceTree = "<group>"; };
+		76F812BB28214AE70049105A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		76F812BE28214C870049105A /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
+		76F812C128214D490049105A /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
+		76F812C428214FB40049105A /* BithumbModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BithumbModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,17 +216,9 @@
 				7621A12627FA148800452446 /* ItemInfoVC */,
 				7621A11927F9FC0900452446 /* CustomTabBarController.swift */,
 				7621A12D27FA1E2800452446 /* AssetModelInfoHeaderVC.swift */,
+				76289EA927CA484E009B70DD /* CustomDefaultStyleAlertVC.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		7621A11D27FA034E00452446 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				76289E9E27CA4203009B70DD /* NFTListVC.swift */,
-				76E26DC527D6F306009B00E3 /* AssetModelInfoVC.swift */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		7621A12027FA06F100452446 /* Setting */ = {
@@ -233,7 +233,8 @@
 		7621A12327FA092300452446 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				7621A12427FA093000452446 /* PersistenceMangager.swift */,
+				76F812CF2821537D0049105A /* Persistence */,
+				76F812CE282153730049105A /* Network */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -252,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				767C5FF327ED8DD000BD5B39 /* CalculatorVC.swift */,
+				76F812C128214D490049105A /* CalculatorView.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -268,14 +270,13 @@
 		763DF3FE27CB2B9900D8F552 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				76F812C8282152000049105A /* Labels */,
+				76F812C9282152120049105A /* Buttons */,
+				76F812CA2821521F0049105A /* TextFields */,
+				76F812CB2821522F0049105A /* ImageViews */,
+				763DF40F27CB3C1500D8F552 /* Cells */,
 				7621A11827F9FBDE00452446 /* ViewControllers */,
 				76BC92F627F2EADE00D763CB /* Views */,
-				76289EA727CA47A2009B70DD /* CustomDefaultStyleBodyLabel.swift */,
-				76289EA927CA484E009B70DD /* CustomDefaultStyleAlertVC.swift */,
-				76289E9727CA3A59009B70DD /* CustomDefaultStyleButton.swift */,
-				76289E9927CA3B5F009B70DD /* CustomDefaultStyleTextField.swift */,
-				763DF41227CB3D5E00D8F552 /* CustomAssetImageView.swift */,
-				76289EA527CA46C5009B70DD /* CustomDefaultStyleTitleLabel.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -307,12 +308,11 @@
 		763DF40127CB2BD000D8F552 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				76F812C6282151920049105A /* Onboarding */,
 				76A7FC2F2807D56B00392DBA /* Calendar */,
-				7621A11D27FA034E00452446 /* Home */,
 				7621A12F27FA203300452446 /* Calculator */,
-				767C5FF127ED89C400BD5B39 /* OnboardingVC.swift */,
-				76EA7BCD27C0CCA9004A56C1 /* MainVC.swift */,
 				7621A12027FA06F100452446 /* Setting */,
+				76F812C028214D210049105A /* Temp */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -320,23 +320,14 @@
 		763DF40227CB2FF100D8F552 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				76F812C7282151D40049105A /* Onboarding */,
+				76F812C328214F910049105A /* Calculator */,
 				76F4D33E28007BF000C80875 /* Calendar */,
 				763DF40327CB300800D8F552 /* OpenseaModel.swift */,
-				767C5FEF27ED899600BD5B39 /* OnboardingSlides.swift */,
 				7621A11E27FA06CD00452446 /* WalletAddress.swift */,
 				76A781B12809899200DAFBD3 /* CoinPrice.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		763DF40527CB328900D8F552 /* NetworkService */ = {
-			isa = PBXGroup;
-			children = (
-				763DF40627CB32A100D8F552 /* NetworkManager.swift */,
-				763DF40A27CB351000D8F552 /* EndPoint.swift */,
-				765C38732817028D006C785C /* APIKey.swift */,
-			);
-			path = NetworkService;
 			sourceTree = "<group>";
 		};
 		763DF40C27CB391B00D8F552 /* Errors */ = {
@@ -348,7 +339,7 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
-		763DF40F27CB3C1500D8F552 /* CustomCells */ = {
+		763DF40F27CB3C1500D8F552 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				76A7FC3F28082AA300392DBA /* MintStaticCustomCells */,
@@ -358,12 +349,7 @@
 				76F4D34628008B1D00C80875 /* CalendarDateCollectionViewCell.swift */,
 				76A7FC342807D85200392DBA /* CalendarListTableViewCell.swift */,
 			);
-			path = CustomCells;
-		7681D3AB27C1375F003A753A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		767C5FFD27EDA20500BD5B39 /* Helper */ = {
@@ -399,8 +385,8 @@
 			isa = PBXGroup;
 			children = (
 				762D198F280320B00049DE2B /* Calendar */,
-				76BC92F727F2EAF900D763CB /* EmptyStateView.swift */,
 				7621A12927FA16DB00452446 /* ItemInfoView.swift */,
+				76BC92F727F2EAF900D763CB /* EmptyStateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -429,14 +415,12 @@
 		76EA7BC827C0CCA9004A56C1 /* NFT-Helper */ = {
 			isa = PBXGroup;
 			children = (
-				763DF40527CB328900D8F552 /* NetworkService */,
-				7621A12327FA092300452446 /* Managers */,
 				763DF40227CB2FF100D8F552 /* Models */,
-				763DF40127CB2BD000D8F552 /* Controllers */,
-				763DF3FF27CB2BB000D8F552 /* Extensions */,
 				763DF3FE27CB2B9900D8F552 /* CustomViews */,
-				763DF40027CB2BBC00D8F552 /* Supports */,
-				763DF40F27CB3C1500D8F552 /* CustomCells */,
+				763DF40127CB2BD000D8F552 /* Controllers */,
+				7621A12327FA092300452446 /* Managers */,
+				76F812BD28214C700049105A /* Protocols */,
+				763DF3FF27CB2BB000D8F552 /* Extensions */,
 				763DF40C27CB391B00D8F552 /* Errors */,
 				76EA7BC927C0CCA9004A56C1 /* AppDelegate.swift */,
 				76EA7BCB27C0CCA9004A56C1 /* SceneDelegate.swift */,
@@ -446,6 +430,7 @@
 				76EA7BD227C0CCAC004A56C1 /* Assets.xcassets */,
 				76EA7BD427C0CCAC004A56C1 /* LaunchScreen.storyboard */,
 				767C5FFD27EDA20500BD5B39 /* Helper */,
+				763DF40027CB2BBC00D8F552 /* Supports */,
 				76EA7BD727C0CCAC004A56C1 /* Info.plist */,
 			);
 			path = "NFT-Helper";
@@ -476,6 +461,100 @@
 				76A7FC3828081ED400392DBA /* MintMetadata.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		76F812BD28214C700049105A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				76F812BE28214C870049105A /* ViewRepresentable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		76F812C028214D210049105A /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				76EA7BCD27C0CCA9004A56C1 /* MainVC.swift */,
+				76289E9E27CA4203009B70DD /* NFTListVC.swift */,
+				76E26DC527D6F306009B00E3 /* AssetModelInfoVC.swift */,
+			);
+			path = Temp;
+			sourceTree = "<group>";
+		};
+		76F812C328214F910049105A /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				76F812C428214FB40049105A /* BithumbModel.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		76F812C6282151920049105A /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				767C5FF127ED89C400BD5B39 /* OnboardingVC.swift */,
+				76F812BB28214AE70049105A /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		76F812C7282151D40049105A /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				767C5FEF27ED899600BD5B39 /* OnboardingSlides.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		76F812C8282152000049105A /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				76289EA727CA47A2009B70DD /* CustomDefaultStyleBodyLabel.swift */,
+				76289EA527CA46C5009B70DD /* CustomDefaultStyleTitleLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		76F812C9282152120049105A /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				76289E9727CA3A59009B70DD /* CustomDefaultStyleButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		76F812CA2821521F0049105A /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				76289E9927CA3B5F009B70DD /* CustomDefaultStyleTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		76F812CB2821522F0049105A /* ImageViews */ = {
+			isa = PBXGroup;
+			children = (
+				763DF41227CB3D5E00D8F552 /* CustomAssetImageView.swift */,
+			);
+			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		76F812CE282153730049105A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				763DF40627CB32A100D8F552 /* NetworkManager.swift */,
+				763DF40A27CB351000D8F552 /* EndPoint.swift */,
+				765C38732817028D006C785C /* APIKey.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		76F812CF2821537D0049105A /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				7621A12427FA093000452446 /* PersistenceMangager.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -639,6 +718,7 @@
 				762D1993280320D30049DE2B /* CalendarHeaderView.swift in Sources */,
 				76289E9827CA3A59009B70DD /* CustomDefaultStyleButton.swift in Sources */,
 				76289E9627CA3750009B70DD /* CalendarVC.swift in Sources */,
+				76F812C528214FB40049105A /* BithumbModel.swift in Sources */,
 				76BC92F827F2EAF900D763CB /* EmptyStateView.swift in Sources */,
 				765C386F2816F885006C785C /* UIImage+Ext.swift in Sources */,
 				767C5FFF27EDA21900BD5B39 /* FirstLaunch.swift in Sources */,
@@ -660,12 +740,14 @@
 				7621A12E27FA1E2800452446 /* AssetModelInfoHeaderVC.swift in Sources */,
 				76F4D34228007DEA00C80875 /* MonthMetadata.swift in Sources */,
 				767C5FF427ED8DD000BD5B39 /* CalculatorVC.swift in Sources */,
+				76F812BC28214AE70049105A /* OnboardingView.swift in Sources */,
 				76289E9F27CA4203009B70DD /* NFTListVC.swift in Sources */,
 				767C5FFC27ED962D00BD5B39 /* UserDefaults+Ext.swift in Sources */,
 				76EA7BCA27C0CCA9004A56C1 /* AppDelegate.swift in Sources */,
 				76A7FC45280834A600392DBA /* DefaultSwitchTableViewCell.swift in Sources */,
 				76F4D34528007EA400C80875 /* CalendarDataError.swift in Sources */,
 				76A7FC3C2808225F00392DBA /* NewMintItemVC.swift in Sources */,
+				76F812BF28214C870049105A /* ViewRepresentable.swift in Sources */,
 				7621A11F27FA06CD00452446 /* WalletAddress.swift in Sources */,
 				763DF41327CB3D5E00D8F552 /* CustomAssetImageView.swift in Sources */,
 				76E26DC627D6F306009B00E3 /* AssetModelInfoVC.swift in Sources */,
@@ -676,6 +758,7 @@
 				763DF41127CB3C4A00D8F552 /* AssetsCollectionViewCell.swift in Sources */,
 				7621A11A27F9FC0900452446 /* CustomTabBarController.swift in Sources */,
 				76F4D34028007BFE00C80875 /* Day.swift in Sources */,
+				76F812C228214D490049105A /* CalculatorView.swift in Sources */,
 				7621A12527FA093000452446 /* PersistenceMangager.swift in Sources */,
 				763DF40B27CB351000D8F552 /* EndPoint.swift in Sources */,
 				76289EA427CA456C009B70DD /* UIViewController+Ext.swift in Sources */,
@@ -859,7 +942,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 2MRY8P7863;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NFT-Helper/Info.plist";
@@ -892,7 +975,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 2MRY8P7863;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NFT-Helper/Info.plist";

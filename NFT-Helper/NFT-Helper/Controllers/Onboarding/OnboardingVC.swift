@@ -7,43 +7,21 @@
 
 import UIKit
 
-import SnapKit
-
 final class OnboardingVC: UIViewController {
 
-    lazy var nextButton = CustomDefaultStyleButton(backgroundColor: .systemGreen, title: "다음")
-    
-    lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 0
-       
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.isPagingEnabled = true
-        collectionView.decelerationRate = .fast
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        collectionView.register(OnboardingCollectionViewCell.self, forCellWithReuseIdentifier: OnboardingCollectionViewCell.identifier)
-        
-        return collectionView
-    }()
-    
-    lazy var pageControl: UIPageControl = {
-        let pageControl = UIPageControl()
-        pageControl.numberOfPages = 3
-        pageControl.currentPage = 0
-        pageControl.pageIndicatorTintColor = .systemGray5
-        pageControl.currentPageIndicatorTintColor = .label
-        pageControl.isEnabled = false
-        
-        return pageControl
-    }()
-    
-    var slides: [OnboardingSlide] = []
-    var currentPage = 0 {
+    private let mainView = OnboardingView()
+
+    private var slides: [OnboardingSlide] = []
+    private var currentPage = 0 {
         didSet {
-            pageControl.currentPage = currentPage
+            mainView.pageControl.currentPage = currentPage
         }
+    }
+    
+    override func loadView() {
+        super.loadView()
+        
+        self.view = mainView
     }
 
     override func viewDidLoad() {
@@ -51,19 +29,15 @@ final class OnboardingVC: UIViewController {
         
         configure()
         setUpOnboardSlide()
-        setUpConstraints()
     }
     
     private func configure() {
         view.backgroundColor = .systemBackground
-        [nextButton, collectionView, pageControl].forEach {
-            view.addSubview($0)
-        }
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        mainView.collectionView.delegate = self
+        mainView.collectionView.dataSource = self
         
-        nextButton.addTarget(self, action: #selector(clickedNextBtn), for: .touchUpInside)
+        mainView.nextButton.addTarget(self, action: #selector(clickedNextBtn), for: .touchUpInside)
     }
 
     private func setUpOnboardSlide() {
@@ -105,29 +79,7 @@ final class OnboardingVC: UIViewController {
         else {
             currentPage += 1
             let indexPath = IndexPath(item: currentPage, section: 0)
-            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        }
-
-    }
-    
-    private func setUpConstraints() {
-        nextButton.snp.makeConstraints { make in
-            make.height.equalTo(48)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(view.snp.width).multipliedBy(0.9)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-16)
-        }
-        
-        pageControl.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.width.equalTo(view.snp.width).multipliedBy(0.9)
-            make.bottom.equalTo(nextButton.snp.top).offset(-42)
-        }
-        
-        collectionView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
-            make.left.right.equalToSuperview()
-            make.bottom.equalTo(pageControl.snp.top).offset(-56)
+            mainView.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
     }
 

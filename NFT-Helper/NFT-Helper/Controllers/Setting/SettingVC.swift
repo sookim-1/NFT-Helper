@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast
 
 class SettingVC: UIViewController {
 
@@ -88,13 +89,16 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
         UserDefaults.walletAddress = walletAddressList[indexPath.row].address
         UserDefaults.isEmptyWalletAddress = false
         
-        print(walletAddressList[indexPath.row].address)
-        guard let url = URL(string: "https://opensea.io/\(walletAddressList[indexPath.row].address)") else {
-            presentDefaultStyleAlertVC(title: "잘못된 링크", body: "링크오류", buttonTitle: "확인")
-            return
-        }
+//        print(walletAddressList[indexPath.row].address)
+//        guard let url = URL(string: "https://opensea.io/\(walletAddressList[indexPath.row].address)") else {
+//            presentDefaultStyleAlertVC(title: "잘못된 링크", body: "링크오류", buttonTitle: "확인")
+//            return
+//        }
+//
+//        presentSafariVC(with: url)
         
-        presentSafariVC(with: url)
+        UIPasteboard.general.string = walletAddressList[indexPath.row].address
+        self.view.makeToast("지갑주소가 복사되었습니다.", duration: 1.0, position: .center)
         
         //tabBarController?.selectedIndex = 0
     }

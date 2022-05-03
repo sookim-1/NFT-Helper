@@ -8,6 +8,7 @@
 import UIKit
 
 final class NetworkManager {
+    
     static let shared = NetworkManager()
     let cache = NSCache<NSString, UIImage>()
     
@@ -49,4 +50,5 @@ final class NetworkManager {
         
         URLSession.request(endpoint: request, completion: completion)
     }
+    
 }

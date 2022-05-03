@@ -78,6 +78,7 @@
 		76F812BC28214AE70049105A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F812BB28214AE70049105A /* OnboardingView.swift */; };
 		76F812BF28214C870049105A /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F812BE28214C870049105A /* ViewRepresentable.swift */; };
 		76F812C228214D490049105A /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F812C128214D490049105A /* CalculatorView.swift */; };
+		76F812C528214FB40049105A /* BithumbModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F812C428214FB40049105A /* BithumbModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +167,7 @@
 		76F812BB28214AE70049105A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		76F812BE28214C870049105A /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
 		76F812C128214D490049105A /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
+		76F812C428214FB40049105A /* BithumbModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BithumbModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +322,7 @@
 		763DF40227CB2FF100D8F552 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				76F812C328214F910049105A /* Calculator */,
 				76F4D33E28007BF000C80875 /* Calendar */,
 				763DF40327CB300800D8F552 /* OpenseaModel.swift */,
 				767C5FEF27ED899600BD5B39 /* OnboardingSlides.swift */,
@@ -482,6 +485,14 @@
 			path = Temp;
 			sourceTree = "<group>";
 		};
+		76F812C328214F910049105A /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				76F812C428214FB40049105A /* BithumbModel.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -639,6 +650,7 @@
 				762D1993280320D30049DE2B /* CalendarHeaderView.swift in Sources */,
 				76289E9827CA3A59009B70DD /* CustomDefaultStyleButton.swift in Sources */,
 				76289E9627CA3750009B70DD /* CalendarVC.swift in Sources */,
+				76F812C528214FB40049105A /* BithumbModel.swift in Sources */,
 				76BC92F827F2EAF900D763CB /* EmptyStateView.swift in Sources */,
 				765C386F2816F885006C785C /* UIImage+Ext.swift in Sources */,
 				767C5FFF27EDA21900BD5B39 /* FirstLaunch.swift in Sources */,
